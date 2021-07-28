@@ -63,7 +63,7 @@ function nf_register_custom_post_types() {
         'new_item'              => __( 'New Testimonial' ),
         'edit_item'             => __( 'Edit Testimonial' ),
         'view_item'             => __( 'View Testimonial' ),
-        'all_items'             => __( 'All Testimonial' ),
+        'all_items'             => __( 'All Testimonials' ),
         'search_items'          => __( 'Search Testimonial' ),
         'parent_item_colon'     => __( 'Parent Testimonial:' ),
         'not_found'             => __( 'No testimonial found.' ),
