@@ -189,7 +189,7 @@ function nf_register_custom_post_types() {
         'show_in_admin_bar'  => true,
         'show_in_rest'       => true,
         'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'foote-notes' ),
+        'rewrite'            => array( 'slug' => 'hero-slider' ),
         'capability_type'    => 'post',
         'has_archive'        => true,
         'hierarchical'       => false,
@@ -199,6 +199,56 @@ function nf_register_custom_post_types() {
     );
 
     register_post_type( 'nf-hero-slider', $args );
+
+
+    // Register Youtube Videos
+    $labels = array(
+        'name'                  => _x( 'Youtube Video', 'post type general name' ),
+        'singular_name'         => _x( 'Youtube Video', 'post type singular name'),
+        'menu_name'             => _x( 'Youtube Videos', 'admin menu' ),
+        'name_admin_bar'        => _x( 'Youtube Video', 'add new on admin bar' ),
+        'add_new'               => _x( 'Add New', 'Youtube Video' ),
+        'add_new_item'          => __( 'Add New Youtube Video' ),
+        'new_item'              => __( 'New Youtube Video' ),
+        'edit_item'             => __( 'Edit Youtube Video' ),
+        'view_item'             => __( 'View Youtube Video' ),
+        'all_items'             => __( 'All Youtube Videos' ),
+        'search_items'          => __( 'Search Youtube Videos' ),
+        'parent_item_colon'     => __( 'Parent Youtube Videos:' ),
+        'not_found'             => __( 'No youtube video found.' ),
+        'not_found_in_trash'    => __( 'No youtube video found in Trash.' ),
+        'archives'              => __( 'Youtube Video Archive'),
+        'insert_into_item'      => __( 'Insert into Youtube Video'),
+        'uploaded_to_this_item' => __( 'Uploaded to this Youtube Video'),
+        'filter_item_list'      => __( 'Filter Hero Slider list'),
+        'items_list_navigation' => __( 'Youtube Video list navigation'),
+        'items_list'            => __( 'Youtube Video list'),
+        'featured_image'        => __( 'Youtube Video featured image'),
+        'set_featured_image'    => __( 'Set Youtube Video featured image'),
+        'remove_featured_image' => __( 'Remove Youtube Video featured image'),
+        'use_featured_image'    => __( 'Use as featured image'),
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'show_in_nav_menus'  => true,
+        'show_in_admin_bar'  => true,
+        'show_in_rest'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'youtube-video' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => 5,
+        'menu_icon'          => 'dashicons-format-gallery',
+        'supports'           => array( 'title'),
+    );
+
+    register_post_type( 'nf-youtube-video', $args );
 
 }
 add_action( 'init', 'nf_register_custom_post_types' );

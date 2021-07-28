@@ -196,16 +196,7 @@ function nf_block_editor_templates() {
         );
 		$post_type_object->template_lock = 'all';
     }
-    if ( isset( $_GET['post'] ) && '30' == $_GET['post'] ) {
-        $post_type_object = get_post_type_object( 'page' );
-        $post_type_object->template = array(
-            // define blocks here...
-			array( 'core/embed' ),
-			array( 'core/embed' ),
-			array( 'core/embed' ),
-			array( 'core/embed' ),
-        );
-		$post_type_object->template_lock = 'all';
-    }
+    
+    
 }
 add_action( 'init', 'nf_block_editor_templates' );
