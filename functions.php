@@ -182,3 +182,19 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 * Custom Post Types & Taxonomies
 */
 require get_template_directory() . '/inc/cpt-taxonomy.php';
+
+
+//Remove Block editor for certain pages
+
+//Photos page
+function nf_block_editor_templates() {
+    if ( isset( $_GET['post'] ) && '24' == $_GET['post'] ) {
+        $post_type_object = get_post_type_object( 'page' );
+        $post_type_object->template = array(
+            // define blocks here...
+			array( 'core/gallery' ),
+        );
+		$post_type_object->template_lock = 'all';
+    }
+}
+add_action( 'init', 'nf_block_editor_templates' );

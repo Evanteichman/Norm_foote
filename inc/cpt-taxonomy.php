@@ -47,7 +47,7 @@ function nf_register_custom_post_types() {
         'hierarchical'       => false,
         'menu_position'      => 5,
         'menu_icon'          => 'dashicons-tickets-alt',
-        'supports'           => array( 'title', 'thumbnail' ),
+        'supports'           => array( 'title' ),
     );
 
     register_post_type( 'nf-concert', $args );
@@ -96,7 +96,7 @@ function nf_register_custom_post_types() {
         'hierarchical'       => false,
         'menu_position'      => 5,
         'menu_icon'          => 'dashicons-format-status',
-        'supports'           => array( 'title', 'thumbnail' ),
+        'supports'           => array( 'title' ),
     );
 
     register_post_type( 'nf-testimonial', $args );
@@ -116,7 +116,7 @@ function nf_register_custom_post_types() {
         'all_items'             => __( 'All Foote Notes' ),
         'search_items'          => __( 'Search Foote Notes' ),
         'parent_item_colon'     => __( 'Parent Foote Note:' ),
-        'not_found'             => __( 'No foote notes found.' ),
+        'not_found'             => __( 'No foote note found.' ),
         'not_found_in_trash'    => __( 'No foote note found in Trash.' ),
         'archives'              => __( 'Foote Note Archives'),
         'insert_into_item'      => __( 'Insert into foote notes'),
@@ -150,6 +150,55 @@ function nf_register_custom_post_types() {
     );
 
     register_post_type( 'nf-foote-note', $args );
+
+    // Register Hero Slider
+    $labels = array(
+        'name'                  => _x( 'Hero Slider', 'post type general name' ),
+        'singular_name'         => _x( 'Slide', 'post type singular name'),
+        'menu_name'             => _x( 'Hero Slider', 'admin menu' ),
+        'name_admin_bar'        => _x( 'Slide', 'add new on admin bar' ),
+        'add_new'               => _x( 'Add New', 'slide' ),
+        'add_new_item'          => __( 'Add New slide' ),
+        'new_item'              => __( 'New slide' ),
+        'edit_item'             => __( 'Edit Slide' ),
+        'view_item'             => __( 'View Slide' ),
+        'all_items'             => __( 'All Slides' ),
+        'search_items'          => __( 'Search Slides' ),
+        'parent_item_colon'     => __( 'Parent Slides:' ),
+        'not_found'             => __( 'No slide found.' ),
+        'not_found_in_trash'    => __( 'No slide found in Trash.' ),
+        'archives'              => __( 'Hero Slider Archive'),
+        'insert_into_item'      => __( 'Insert into Hero Slider'),
+        'uploaded_to_this_item' => __( 'Uploaded to this Hero Slider'),
+        'filter_item_list'      => __( 'Filter Hero Slider list'),
+        'items_list_navigation' => __( 'Hero Slider list navigation'),
+        'items_list'            => __( 'Hero Slider list'),
+        'featured_image'        => __( 'Slide featured image'),
+        'set_featured_image'    => __( 'Set slide featured image'),
+        'remove_featured_image' => __( 'Remove slide featured image'),
+        'use_featured_image'    => __( 'Use as featured image'),
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'show_in_nav_menus'  => true,
+        'show_in_admin_bar'  => true,
+        'show_in_rest'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'foote-notes' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => 5,
+        'menu_icon'          => 'dashicons-format-gallery',
+        'supports'           => array( 'title', 'thumbnail' ),
+    );
+
+    register_post_type( 'nf-hero-slider', $args );
 
 }
 add_action( 'init', 'nf_register_custom_post_types' );
