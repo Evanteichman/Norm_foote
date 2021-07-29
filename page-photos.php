@@ -20,8 +20,21 @@ get_header();
 		<?php
 		while ( have_posts() ) :
 			the_post();
-
 			
+			// https://www.advancedcustomfields.com/resources/gallery/
+			//not sure if image titles are needed, or if we want them to be clicked and then enlarged. Outputting a simple gallery for now.
+			//change the size attribut in the img tag to change the size of the output images., not sure if it wil be better to have large images output and then change size on the front end using css
+			$images = get_field('gallery');
+			if( $images ): ?>
+				<div>
+					<?php foreach( $images as $image ): ?>
+			
+						<img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+							
+					<?php endforeach; ?>
+				</div>
+			<?php endif; 
+
 
 			// get_template_part( 'template-parts/content', 'page' );
 
