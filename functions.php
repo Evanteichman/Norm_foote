@@ -196,7 +196,6 @@ function nf_block_editor_templates() {
         );
 		$post_type_object->template_lock = 'all';
     }
-    
-    
+
 }
 add_action( 'init', 'nf_block_editor_templates' );
