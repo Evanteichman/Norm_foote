@@ -41,10 +41,15 @@ get_header();
 					$query  -> the_post();
 					if( function_exists('get_field')):?>
 
-					<!-- needs to be wrapped in proper html -->
-					<!-- planing to turn this all into a slider, just trying to output everything right now -->
-						<?php the_post_thumbnail();?>
-						<?php the_field('text');?>
+						
+						<!-- ask about this do I need to wrap the pozt thumbnail in a conditional statement -->
+						<?php if ( get_the_post_thumbnail() ) : ?>
+							<?php the_post_thumbnail();?>
+						<?php endif; ?> 
+
+						<?php if ( get_field( 'text' ) ) : ?>
+							<?php the_field('text');?>
+						<?php endif; ?> 
 
 						<?php
 						$link = get_field('link');
@@ -85,9 +90,14 @@ get_header();
 
 					if( function_exists('get_field')):?>
 
-						<?php the_field('text');?>
-						<?php the_field('author');?>
-						
+						<?php if ( get_field( 'text' ) ) : ?>
+							<?php the_field('text');?>
+						<?php endif; ?> 
+
+						<?php if ( get_field( 'author' ) ) : ?>
+							<?php the_field('author');?>
+						<?php endif; ?> 
+
 					<?php
 					endif;
 		
@@ -117,8 +127,16 @@ get_header();
 					$query -> the_post();
 
 					if( function_exists('get_field')):?>
+
+					<!-- do I need to wrap the title in a conditonal -->
+					<?php if ( get_the_title() ) : ?>
 						<?php the_title(); ?>
+					<?php endif; ?> 
+
+					
+					<?php if ( get_field( 'text' ) ) : ?>
 						<?php the_field('text');?>
+					<?php endif; ?> 
 			
 					<?php
 					endif;
@@ -148,10 +166,16 @@ get_header();
 					$query -> the_post();
 
 					if( function_exists('get_field')):?>
-						<?php the_title(); ?>
-						<?php the_field('video');?>
+
+						<!-- do I need to wrap the title in a conditonal -->
+						<?php if ( get_the_title() ) : ?>
+							<?php the_title(); ?>
+						<?php endif; ?> 
 						
-						
+						<?php if ( get_field( 'video' ) ) : ?>
+							<?php the_field('video');?>
+						<?php endif; ?> 
+
 					<?php
 					endif;
 		
@@ -180,13 +204,20 @@ get_header();
 					$query -> the_post();
 
 					if( function_exists('get_field')):?>
+
+						<?php if ( get_field( 'name' ) ) : ?>
+							<?php the_field('name');?>
+						<?php endif; ?> 
+
+						<?php if ( get_field( 'text' ) ) : ?>
+							<?php the_field('text');?>
+						<?php endif; ?> 
 						
-						<?php the_field('name');?>
-						<?php the_field('text');?>
-						<?php the_field('bio');?>
-						
-						
-					<?php
+						<?php 
+						$image = get_field('image');
+						if( !empty( $image ) ): ?>
+							<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+						<?php endif; 
 					endif;
 		
 				endwhile;
@@ -213,9 +244,15 @@ get_header();
 					$query -> the_post();
 
 					if( function_exists('get_field')):?>
-						<?php the_title(); ?>
-						<?php the_field('music_player');?>
-						
+
+						<!-- do I need to wrap the title in a conditonal -->
+						<?php if ( get_the_title() ) : ?>
+							<?php the_title(); ?>
+						<?php endif; ?> 
+
+						<?php if ( get_field( 'music_player' ) ) : ?>
+							<?php the_field('music_player');?>
+						<?php endif; ?> 
 						
 					<?php
 					endif;
