@@ -190,7 +190,7 @@ function nf_block_editor_templates() {
         $post_type_object = get_post_type_object( 'page' );
         $post_type_object->template = array(
             // define blocks here...
-			array( 'core/gallery' ),
+			array( 'core/title' ),
         );
 		$post_type_object->template_lock = 'all';
     }
