@@ -1,71 +1,72 @@
 .main-navigation {
-	display: block;
-	width: 100%;
+	bottom: 0;
+  	right: 0;
+  	position: fixed;
+  	display: block;
+  	width: 100%;
+  	z-index: 10000;
+  	width: 100%;
+
+	.hamburger {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		z-index: 1000;
+	}
+	
+	.bar {
+		width: 20px;
+		height: 1px;
+		background: white;
+		margin: 0 auto 6px;
+	}
+	
+	.bar:nth-of-type(2) {
+		width: 25px;
+	}
+	
+	button.menu-toggle {
+		background: black;
+		width: 3.5rem;
+		height: 3.5rem;
+		border-radius: 50%;
+		margin: 10px;
+		z-index: 10;
+	}
 
 	ul {
 		display: none;
-		list-style: none;
-		margin: 0;
-		padding-left: 0;
-
-		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 100%;
-			left: -999em;
-			z-index: 99999;
-
-			ul {
-				left: -999em;
-				top: 0;
-			}
-
-			li {
-
-				&:hover > ul,
-				&.focus > ul {
-					display: block;
-					left: auto;
-				}
-			}
-
-			a {
-				width: 200px;
-			}
-
-			:hover > a,
-			.focus > a {
-			}
-
-			a:hover,
-			a.focus {
+    	list-style: none;
+    	margin: 0;
+    	padding-left: 0;
+    	position: absolute;
+    	bottom: 0;
+    	transform: translate(-50%);
+    	width: 100%;
+    	right: -50%;
+    	z-index: -1;
+		
+		li {
+			position: relative;
+			background: rgba(255, 255, 255, 0.95);
+			text-align: center;
+			
+			&:hover {
+				background: blue;
+				color: white;
 			}
 		}
 
-		li:hover > ul,
-		li.focus > ul {
-			left: auto;
+		a {
+			display: block;
+    		text-decoration: none;
+    		color: black;
+    		padding: 0.5rem;
+
+    		&:hover {
+      			color: white;
+			}
 		}
-	}
-
-	li {
-		position: relative;
-
-		&:hover > a,
-		&.focus > a {
-		}
-	}
-
-	a {
-		display: block;
-		text-decoration: none;
-	}
-
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
 	}
 }
 
