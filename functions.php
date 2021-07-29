@@ -183,11 +183,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 */
 require get_template_directory() . '/inc/cpt-taxonomy.php';
 
-
-//Remove Block editor for certain pages
-
-//Photos page
+//Adding a block template for certain pages
 function nf_block_editor_templates() {
+	//Photos page
     if ( isset( $_GET['post'] ) && '24' == $_GET['post'] ) {
         $post_type_object = get_post_type_object( 'page' );
         $post_type_object->template = array(
@@ -197,5 +195,24 @@ function nf_block_editor_templates() {
 		$post_type_object->template_lock = 'all';
     }
 
+	//Outreach page (only allowing title as we will use all ACF for content)
+    if ( isset( $_GET['post'] ) && '26' == $_GET['post'] ) {
+        $post_type_object = get_post_type_object( 'page' );
+        $post_type_object->template = array(
+            // define blocks here...
+			array( 'core/title' ),
+        );
+		$post_type_object->template_lock = 'all';
+    }
+
+	//Symphony page (only allowing title as we will use all ACF for content)
+	if ( isset( $_GET['post'] ) && '28' == $_GET['post'] ) {
+		$post_type_object = get_post_type_object( 'page' );
+		$post_type_object->template = array(
+			// define blocks here...
+			array( 'core/title' ),
+		);
+		$post_type_object->template_lock = 'all';
+	}
 }
 add_action( 'init', 'nf_block_editor_templates' );
