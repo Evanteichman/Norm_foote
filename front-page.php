@@ -158,7 +158,71 @@ get_header();
 				endwhile;
 					wp_reset_postdata(); // Reset the post data to avoid database conflicts
 			endif;
+
+
+			// output the bio
+			$args = array(
+				'post_type' 		=> 'nf-bio',
+				'posts_per_page' 	=> -1,
+				'order_by'			=> 'title',
+				'order'				=> 'ASC'
+			);
+			 
+			$query = new WP_Query( $args );
+			 
+			if ( $query -> have_posts() ):
+				?>
+
+					<h1>Bio Stuff</h1>
 					
+					<?php
+				while ( $query -> have_posts() ) :
+					$query -> the_post();
+
+					if( function_exists('get_field')):?>
+						
+						<?php the_field('name');?>
+						<?php the_field('text');?>
+						<?php the_field('bio');?>
+						
+						
+					<?php
+					endif;
+		
+				endwhile;
+					wp_reset_postdata(); // Reset the post data to avoid database conflicts
+			endif;
+
+			// output the music payers
+			$args = array(
+				'post_type' 		=> 'nf-music-player',
+				'posts_per_page' 	=> -1,
+				'order_by'			=> 'title',
+				'order'				=> 'ASC'
+			);
+			 
+			$query = new WP_Query( $args );
+			 
+			if ( $query -> have_posts() ):
+				?>
+
+					<h1>Music Player Stuff</h1>
+					
+					<?php
+				while ( $query -> have_posts() ) :
+					$query -> the_post();
+
+					if( function_exists('get_field')):?>
+						<?php the_title(); ?>
+						<?php the_field('music_player');?>
+						
+						
+					<?php
+					endif;
+		
+				endwhile;
+					wp_reset_postdata(); // Reset the post data to avoid database conflicts
+			endif;
 
 			// get_template_part( 'template-parts/content', 'page' );
 
