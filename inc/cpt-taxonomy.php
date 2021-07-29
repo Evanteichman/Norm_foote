@@ -3,7 +3,7 @@
 //CUSTOM POST TYPES
 function nf_register_custom_post_types() {
     
-    // Register Concerts
+    // Register Concerts CPT
     $labels = array(
         'name'                  => _x( 'Concerts', 'post type general name' ),
         'singular_name'         => _x( 'Concert', 'post type singular name'),
@@ -52,7 +52,7 @@ function nf_register_custom_post_types() {
 
     register_post_type( 'nf-concert', $args );
 
-    // Register Testimonial
+    // Register Testimonial CPT
     $labels = array(
         'name'                  => _x( 'Testimonial', 'post type general name' ),
         'singular_name'         => _x( 'Testimonial', 'post type singular name'),
@@ -102,7 +102,7 @@ function nf_register_custom_post_types() {
     register_post_type( 'nf-testimonial', $args );
 
 
-    // Register Foote Notes
+    // Register Foote Notes CPT
     $labels = array(
         'name'                  => _x( 'Foote Notes', 'post type general name' ),
         'singular_name'         => _x( 'Foote Note', 'post type singular name'),
@@ -151,7 +151,7 @@ function nf_register_custom_post_types() {
 
     register_post_type( 'nf-foote-note', $args );
 
-    // Register Hero Slider
+    // Register Hero Slider CPT
     $labels = array(
         'name'                  => _x( 'Hero Slider', 'post type general name' ),
         'singular_name'         => _x( 'Slide', 'post type singular name'),
@@ -201,7 +201,7 @@ function nf_register_custom_post_types() {
     register_post_type( 'nf-hero-slider', $args );
 
 
-    // Register Youtube Videos
+    // Register Youtube Video CPT
     $labels = array(
         'name'                  => _x( 'Youtube Video', 'post type general name' ),
         'singular_name'         => _x( 'Youtube Video', 'post type singular name'),
@@ -251,7 +251,7 @@ function nf_register_custom_post_types() {
     register_post_type( 'nf-youtube-video', $args );
 
 
-    // Register Bio
+    // Register Bio CPT
     $labels = array(
         'name'                  => _x( 'Bio', 'post type general name' ),
         'singular_name'         => _x( 'Bio', 'post type singular name'),
@@ -300,7 +300,7 @@ function nf_register_custom_post_types() {
 
     register_post_type( 'nf-bio', $args );
 
-    // Register Spotify Embed
+    // Register Spotify Embed CPT
     $labels = array(
         'name'                  => _x( 'Music Player', 'post type general name' ),
         'singular_name'         => _x( 'Music Player', 'post type singular name'),
@@ -349,6 +349,56 @@ function nf_register_custom_post_types() {
 
     register_post_type( 'nf-music-player', $args );
 
+
+    // Register Contact CPT
+    $labels = array(
+        'name'                  => _x( 'Contact Info', 'post type general name' ),
+        'singular_name'         => _x( 'Contact Info', 'post type singular name'),
+        'menu_name'             => _x( 'Contact Info', 'admin menu' ),
+        'name_admin_bar'        => _x( 'Contact Info', 'add new on admin bar' ),
+        'add_new'               => _x( 'Add New', 'Contact Info' ),
+        'add_new_item'          => __( 'Add New Contact Info' ),
+        'new_item'              => __( 'New Contact Info' ),
+        'edit_item'             => __( 'Edit Contact Info' ),
+        'view_item'             => __( 'View Contact Info' ),
+        'all_items'             => __( 'All Contact Info' ),
+        'search_items'          => __( 'Search Contact Info' ),
+        'parent_item_colon'     => __( 'Parent Contact Info:' ),
+        'not_found'             => __( 'No contact info found.' ),
+        'not_found_in_trash'    => __( 'No contact info found in Trash.' ),
+        'archives'              => __( 'Contact Info Archive'),
+        'insert_into_item'      => __( 'Insert into Contact Info'),
+        'uploaded_to_this_item' => __( 'Uploaded to this Contact Info'),
+        'filter_item_list'      => __( 'Filter Contact Info list'),
+        'items_list_navigation' => __( 'Contact Info list navigation'),
+        'items_list'            => __( 'Contact Info list'),
+        'featured_image'        => __( 'Contact Info featured image'),
+        'set_featured_image'    => __( 'Set Contact Info featured image'),
+        'remove_featured_image' => __( 'Remove Contact Info featured image'),
+        'use_featured_image'    => __( 'Use as featured image'),
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'show_in_nav_menus'  => true,
+        'show_in_admin_bar'  => true,
+        'show_in_rest'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'contact' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => 5,
+        'menu_icon'          => 'dashicons-phone',
+        'supports'           => array( 'title'),
+    );
+
+    register_post_type( 'nf-contact', $args );
+
 }
 add_action( 'init', 'nf_register_custom_post_types' );
 
@@ -357,7 +407,7 @@ add_action( 'init', 'nf_register_custom_post_types' );
 //CUSTOM TAXONOMIES
 function nf_register_taxonomies() {
 
-    // Add Service Taxonomy
+    // Add Foote Note Taxonomy
     $labels = array(
         'name'              => _x( 'Foote Note Categories', 'taxonomy general name' ),
         'singular_name'     => _x( 'Foote Note Category', 'taxonomy singular name' ),
