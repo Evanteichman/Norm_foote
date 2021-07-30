@@ -48,9 +48,10 @@ if ( ! function_exists( 'nf_theme_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in one location.
+		// register social menu
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'nf_theme' ),
+				'menu-1' => esc_html__( 'Primary', 'nf_theme' ),'social' => esc_html__( 'Social Menu Location', 'nf_themem' )
 			)
 		);
 
@@ -216,3 +217,42 @@ function nf_block_editor_templates() {
 	}
 }
 add_action( 'init', 'nf_block_editor_templates' );
+
+// removing "Archive:" from archive pages
+add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
+
+// // excerpt length
+// function nf_custom_excerpt_length($length) {
+//     global $post;
+//     if ($post->post_type == 'post')
+//     return 25;
+//     else if ($post->post_type == 'nf-testimonial')
+//     return 40;
+//     else if ($post->post_type == 'nf-foote-note')
+//     return 50;
+//     else if ($post->post_type == 'nf-hero-slider')
+//     return 60;
+//     else
+//     return 80;
+// }
+// add_filter('excerpt_length', 'nf_custom_excerpt_length');
+
+
+//do we need an if statement wrapping the line inside the function?
+//trims text from ACF field in hero slide to create an excerpt, must call the_excerpt where you want to output this
+function acf_excerpt_hero($excerpt) {
+
+	$my_acf_field = wp_trim_words(get_field('text'), 20);
+
+return $my_acf_field . '' . $excerpt;
+}
+add_filter('the_excerpt', 'acf_excerpt_hero');
+
+
+//Edit the Read More Link
+// function fwd_fitness_excerpt_more($more){
+// 	$more = '... <a class="read-more" href="'. get_permalink(). '">Continue Reading</a>';
+// 	return $more;
+// }
+
+// add_filter('excerpt_more', 'fwd_fitness_excerpt_more');
