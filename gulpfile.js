@@ -31,7 +31,7 @@ gulp.task('watch', function () {
 	// BrowserSync ***UPDATE URL & PORT***
 	browserSync.init({
 		open: 'external',
-		proxy: 'http://localhost:8888/norm-foote',
+		proxy: 'http://localhost/norm-foote',
 		port: 8888
 	});
 	gulp.watch(root + '**/*').on('change', browserSync.reload);
