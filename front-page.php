@@ -13,6 +13,9 @@
  */
 
 get_header();
+
+//social menu
+require get_template_directory() . '/template-parts/content-social-nav.php';
 ?>
 
 	<main id="primary" class="site-main">
@@ -47,20 +50,11 @@ get_header();
 							<?php the_post_thumbnail();?>
 						<?php endif; ?> 
 
-						<?php if ( get_field( 'text' ) ) : ?>
-							<?php the_field('text');?>
-						<?php endif; ?> 
-
 						<?php
-						$link = get_field('link');
-						if( $link ): 
-							$link_url = $link['url'];
-							$link_title = 'Learn More';
-							$link_target = $link['target'] ? $link['target'] : '_self';
-							?>
-							<a class="button" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-						<?php
-						endif; ?>
+						the_excerpt();
+						?>
+						<a href="<?php the_field('hero_link'); ?>">Hero link</a>
+						
 	
 					<?php 
 					endif;
@@ -90,12 +84,12 @@ get_header();
 
 					if( function_exists('get_field')):?>
 
-						<?php if ( get_field( 'text' ) ) : ?>
-							<?php the_field('text');?>
+						<?php if ( get_field( 'testimonial_text' ) ) : ?>
+							<?php the_field('testimonial_text');?>
 						<?php endif; ?> 
 
-						<?php if ( get_field( 'author' ) ) : ?>
-							<?php the_field('author');?>
+						<?php if ( get_field( 'testimonial_author' ) ) : ?>
+							<?php the_field('testimonial_author');?>
 						<?php endif; ?> 
 
 					<?php
@@ -134,8 +128,8 @@ get_header();
 					<?php endif; ?> 
 
 					
-					<?php if ( get_field( 'text' ) ) : ?>
-						<?php the_field('text');?>
+					<?php if ( get_field( 'foote_note_text' ) ) : ?>
+						<?php the_field('foote_note_text');?>
 					<?php endif; ?> 
 			
 					<?php
@@ -205,16 +199,16 @@ get_header();
 
 					if( function_exists('get_field')):?>
 
-						<?php if ( get_field( 'name' ) ) : ?>
-							<?php the_field('name');?>
+						<?php if ( get_field( 'bio_name' ) ) : ?>
+							<?php the_field('bio_name');?>
 						<?php endif; ?> 
 
-						<?php if ( get_field( 'text' ) ) : ?>
-							<?php the_field('text');?>
+						<?php if ( get_field( 'bio_text' ) ) : ?>
+							<?php the_field('bio_text');?>
 						<?php endif; ?> 
 						
 						<?php 
-						$image = get_field('image');
+						$image = get_field('bio_image');
 						if( !empty( $image ) ): ?>
 							<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
 						<?php endif; 
