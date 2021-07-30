@@ -28,8 +28,8 @@ get_header();
 			<section class="intro">
                 <?php if ( function_exists ( 'get_field' ) ) : ?>
  
-					<?php if ( get_field( 'intro_message' ) ) : ?>
-						<p> <?php the_field( 'intro_message' ); ?> </p>
+					<?php if ( get_field( 'outreach_intro_message' ) ) : ?>
+						<p> <?php the_field( 'outreach_intro_message' ); ?> </p>
 					<?php endif; ?>
 			
 				<?php endif; ?>
@@ -38,16 +38,16 @@ get_header();
 			<section class="section-1">
                 <?php if ( function_exists ( 'get_field' ) ) : ?>
  
-					<?php if ( get_field( 'section_1_title' ) ) : ?>
-						<h2> <?php the_field( 'section_1_title' ); ?> </h2>
+					<?php if ( get_field( 'outreach_section_1_title' ) ) : ?>
+						<h2> <?php the_field( 'outreach_section_1_title' ); ?> </h2>
 					<?php endif; ?>
 			 
-					<?php if ( get_field( 'section_1_information' ) ) : ?>
-						<p> <?php the_field( 'section_1_information' ); ?> </p>
+					<?php if ( get_field( 'outreach_section_1_information' ) ) : ?>
+						<p> <?php the_field( 'outreach_section_1_information' ); ?> </p>
 					<?php endif; ?> 
 						
-					<?php if ( get_field( 'section_1_photo' ) ) :
-						$image = get_field('section_1_photo');
+					<?php if ( get_field( 'outreach_section_1_photo' ) ) :
+						$image = get_field('outreach_section_1_photo');
 
 						// Image code snippet from https://www.advancedcustomfields.com/resources/image/
 						if( !empty( $image ) ): ?>
@@ -60,16 +60,16 @@ get_header();
 			<section class="section-2">
                 <?php if ( function_exists ( 'get_field' ) ) : ?>
  
-					<?php if ( get_field( 'section_2_title' ) ) : ?>
-						<h2> <?php the_field( 'section_2_title' ); ?> </h2>
+					<?php if ( get_field( 'outreach_section_2_title' ) ) : ?>
+						<h2> <?php the_field( 'outreach_section_2_title' ); ?> </h2>
 					<?php endif; ?>
 			 
-					<?php if ( get_field( 'section_2_information' ) ) : ?>
-						<p> <?php the_field( 'section_2_information' ); ?> </p>
+					<?php if ( get_field( 'outreach_section_2_information' ) ) : ?>
+						<p> <?php the_field( 'outreach_section_2_information' ); ?> </p>
 					<?php endif; ?> 
 						
-					<?php if ( get_field( 'section_2_photo' ) ) :
-						$image = get_field('section_2_photo');
+					<?php if ( get_field( 'outreach_section_2_photo' ) ) :
+						$image = get_field('outreach_section_2_photo');
 						
 						// Image code snippet from https://www.advancedcustomfields.com/resources/image/
 						if( !empty( $image ) ): ?>
@@ -82,16 +82,16 @@ get_header();
 			<section class="section-3">
                 <?php if ( function_exists ( 'get_field' ) ) : ?>
  
-					<?php if ( get_field( 'section_3_title' ) ) : ?>
-						<h2> <?php the_field( 'section_3_title' ); ?> </h2>
+					<?php if ( get_field( 'outreach_section_3_title' ) ) : ?>
+						<h2> <?php the_field( 'outreach_section_3_title' ); ?> </h2>
 					<?php endif; ?>
 			 
-					<?php if ( get_field( 'section_3_information' ) ) : ?>
-						<p> <?php the_field( 'section_2_information' ); ?> </p>
+					<?php if ( get_field( 'outreach_section_3_information' ) ) : ?>
+						<p> <?php the_field( 'outreach_section_2_information' ); ?> </p>
 					<?php endif; ?> 
 						
-					<?php if ( get_field( 'section_3_photo' ) ) :
-						$image = get_field('section_3_photo');
+					<?php if ( get_field( 'outreach_section_3_photo' ) ) :
+						$image = get_field('outreach_section_3_photo');
 						
 						// Image code snippet from https://www.advancedcustomfields.com/resources/image/
 						if( !empty( $image ) ): ?>
