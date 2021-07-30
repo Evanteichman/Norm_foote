@@ -7,6 +7,10 @@
   	width: 100%;
 	background-color: white;
 
+	li.logo {
+		display: none;
+	}
+
 	.mobile-menu {
 		display: flex;
 		flex-direction: row;
@@ -105,6 +109,10 @@
 		li {
 			background: initial;
 		}
+	}
+
+	li.logo {
+		display: initial;
 	}
 
 	.menu-toggle,
