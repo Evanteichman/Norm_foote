@@ -28,8 +28,8 @@ get_header();
 			<section class="symphony-content">
 			<?php if ( function_exists ( 'get_field' ) ) : ?>
 
-				<?php if ( get_field( 'banner_image' ) ) :
-					$image = get_field('banner_image');
+				<?php if ( get_field( 'symphony_banner_image' ) ) :
+					$image = get_field('symphony_banner_image');
 
 					// Image code snippet from https://www.advancedcustomfields.com/resources/image/
 					if( !empty( $image ) ): ?>
@@ -37,13 +37,13 @@ get_header();
 					<?php endif; ?>
 				<?php endif; ?>
 			
-				<?php if ( get_field( 'page_information' ) ) : ?>
-					<p> <?php the_field( 'page_information' ); ?> </p>
+				<?php if ( get_field( 'symphony_page_information' ) ) : ?>
+					<p> <?php the_field( 'symphony_page_information' ); ?> </p>
 				<?php endif; ?> 
 					
 				<!-- Gallery code snippet from https://www.advancedcustomfields.com/resources/gallery/ -->
-				<?php  if ( get_field( 'photo_gallery' ) ) :
-					$images = get_field('photo_gallery');
+				<?php  if ( get_field( 'symphony_photo_gallery' ) ) :
+					$images = get_field('symphony_photo_gallery');
 					if( $images ): ?>
 						<?php foreach( $images as $image ): ?>
 							<img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />

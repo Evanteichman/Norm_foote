@@ -46,6 +46,7 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
+			<div class="mobile-menu">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 				<div class="hamburger">
 					<div class="bar"></div>
@@ -53,6 +54,8 @@
 					<div class="bar"></div>
 				</div>
 			</button>
+			<p>Menu</p>
+			<div>
 			<?php
 			wp_nav_menu(
 				array(
