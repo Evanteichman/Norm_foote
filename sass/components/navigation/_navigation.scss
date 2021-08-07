@@ -1,152 +1,170 @@
 .main-navigation {
-	bottom: 0;
-  	right: 0;
-	left: 0;
-  	position: fixed;
-  	display: flex;
-  	width: 100%;
-	background-color: white;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: fixed;
+  display: flex;
+  width: 100%;
+  background-color: white;
 
-	li.logo {
-		display: none;
-	}
+  li.logo {
+    display: none;
+  }
 
-	.mobile-menu {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		margin: 0 auto;
+  .mobile-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
 
-		p {
-			font-size: 1.5rem;
-		}
-	}
+    p {
+      font-size: 1.5rem;
+    }
+  }
 
-	.hamburger {
-		display: flex;
-		justify-content: center;
-		flex-direction: column;
-		z-index: 1000;
-	}
-	
-	.bar {
-		width: 20px;
-		height: 1px;
-		background: black;
-		margin: 0 auto 6px;
-	}
-	
-	.bar:nth-of-type(2) {
-		width: 25px;
-		height: 1.2px;
-	}
-	
-	button.menu-toggle {
-		background: transparent;
-		width: 3.5rem;
-		height: 3.5rem;
-		border-radius: 50%;
-		margin: 10px;
-		z-index: 10;
+  .hamburger {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1000;
+  }
 
-		&:hover {
-			background-color: lightcoral;
-			border: none;
-		}
-	}
+  .bar {
+    width: 20px;
+    height: 1px;
+    background: black;
+    margin: 0 auto 6px;
+  }
 
-	ul {
-		display: none;
-    	list-style: none;
-    	margin: 0;
-    	padding-left: 0;
-    	position: absolute;
-    	bottom: 100%;
-    	transform: translate(-50%);
-    	width: 100%;
-    	right: -50%;
-    	z-index: -1;
-		// height: 100%;
-		
-		li {
-			position: relative;
-			background-color: rgba(255, 255, 255, 0.95);
-			text-align: center;
-			
-			&:hover {
-				background: #4056A1;
-				color: white;
-			}
-		}
+  .bar:nth-of-type(2) {
+    width: 25px;
+    height: 1.2px;
+  }
 
-		a {
-			display: block;
-    		text-decoration: none;
-    		color: black;
-    		padding: 1rem;
+  button.menu-toggle {
+    background: transparent;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    margin: 10px;
+    z-index: 10;
 
-    		&:hover {
-      			color: white;
-			}
-		}
-	}
+    &:hover {
+      background-color: lightcoral;
+      border: none;
+    }
+  }
+
+  ul {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    position: absolute;
+    bottom: 100%;
+    transform: translate(-50%);
+    width: 100%;
+    right: -50%;
+    z-index: -1;
+    // height: 100%;
+
+    li {
+      position: relative;
+      background-color: rgba(255, 255, 255, 0.95);
+      text-align: center;
+
+      &:hover {
+        background: #4056a1;
+        color: white;
+      }
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+      color: black;
+      padding: 1rem;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
+
+// social nav
+
+.social-navigation {
+  background: none;
+  position: fixed;
+  top: 50vh;
+  left: 10px;
+  z-index: 100;
+  div {
+    ul {
+      padding: 0;
+      margin: 0;
+      li {
+        list-style: none;
+      }
+    }
+  }
 }
 
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
-	display: block;
+  display: block;
 }
 
 @media screen and (min-width: 40.75em) {
+  .main-navigation {
+    bottom: initial;
+    right: initial;
+    left: initial;
+    top: 0;
+    z-index: 200;
 
-	.main-navigation {
-		bottom: initial;
-		right: initial;
-		left: initial;
-		top: 0;
+    li {
+      background: initial;
+    }
+  }
 
-		li {
-			background: initial;
-		}
-	}
+  li.logo {
+    display: initial;
+  }
 
-	li.logo {
-		display: initial;
-	}
+  .menu-toggle,
+  .mobile-menu p {
+    display: none;
+  }
 
-	.menu-toggle,
-	.mobile-menu p {
-		display: none;
-	}
-
-	.main-navigation ul {
-		display: flex;
-		justify-content: flex-end;
-		position: relative;
-    	padding-top: 1.25rem;
-    	z-index: 1;
-	}
+  .main-navigation ul {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    padding-top: 1.25rem;
+    z-index: 1;
+  }
 }
 
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
+  .site-main & {
+    margin: 0 0 1.5em;
+  }
 
-	.site-main & {
-		margin: 0 0 1.5em;
-	}
+  .nav-links {
+    display: flex;
+  }
 
-	.nav-links {
-		display: flex;
-	}
+  .nav-previous {
+    flex: 1 0 50%;
+  }
 
-	.nav-previous {
-		flex: 1 0 50%;
-	}
-
-	.nav-next {
-		text-align: end;
-		flex: 1 0 50%;
-	}
+  .nav-next {
+    text-align: end;
+    flex: 1 0 50%;
+  }
 }
