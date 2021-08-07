@@ -1,0 +1,17 @@
+.home-slider {
+  position: relative;
+}
+
+.swiper-slide {
+  img {
+    height: 80vh;
+    width: 100vw;
+    object-fit: cover;
+  }
+  .slide-info {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 25rem;
+  }
+}

@@ -34,34 +34,47 @@ require get_template_directory() . '/template-parts/content-social-nav.php';
 			
 			$query = new WP_Query( $args );
 			
-			if ( $query  -> have_posts() ) :
-				?>
-
-					<h1>Hero Slider Stuff</h1>
+			if ($query->have_posts()) : ?>
+				<section class="home-slider">
 					
-					<?php
-				while( $query  -> have_posts() ) :
-					$query  -> the_post();
-					if( function_exists('get_field')):?>
+					<div class="swiper-container">
 
-						
-						<!-- ask about this do I need to wrap the pozt thumbnail in a conditional statement -->
-						<?php if ( get_the_post_thumbnail() ) : ?>
-							<?php the_post_thumbnail();?>
-						<?php endif; ?> 
+						<div class="swiper-wrapper">
 
-						<?php
-						the_excerpt();
-						?>
-						<a href="<?php the_field('hero_link'); ?>">Hero link</a>
-						
-	
-					<?php 
-					endif;
-	
-				endwhile;
-				wp_reset_postdata(); // Reset the post data to avoid database conflicts
+							<?php 
+
+							while ($query->have_posts()) : 
+									$query->the_post();
+
+									if( function_exists('get_field')):?>
+
+										<div class="swiper-slide">
+											<!-- ask about this do I need to wrap the post thumbnail in a conditional statement -->
+											<?php if ( get_the_post_thumbnail() ) : ?>
+												<?php the_post_thumbnail();?>
+											<?php endif; ?> 
+											<div class="slide-info">
+												<p class="slide-text"><?php the_excerpt(); ?></p>
+												<a class="slide-link" href="<?php the_field('hero_link'); ?>">Hero link</a>
+											</div>
+										</div>
+
+									<?php endif; ?> 
+
+							<?php endwhile; ?>
+						</div>
+
+								<div class="swiper-pagination"></div>
+								<div class="swiper-button-prev"></div>
+								<div class="swiper-button-next"></div>
+					</div>
+				</section>
+
+			
+			<?php
+				wp_reset_postdata();
 			endif;
+			
 	
 			// output the testimonials
 			$args = array(
