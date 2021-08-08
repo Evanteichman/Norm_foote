@@ -54,6 +54,7 @@ require get_template_directory() . '/template-parts/content-social-nav.php';
 												<?php the_post_thumbnail();?>
 											<?php endif; ?> 
 											<div class="slide-info">
+												<h2> <?php the_title(); ?></h2>
 												<p class="slide-text"><?php the_excerpt(); ?></p>
 												<a class="slide-link" href="<?php the_field('hero_link'); ?>">Hero link</a>
 											</div>
@@ -89,27 +90,39 @@ require get_template_directory() . '/template-parts/content-social-nav.php';
 			if ( $query -> have_posts() ):
 				?>
 
-					<h1>Testimonial Stuff</h1>
+					<h1>Testimonials</h1>
+
+					<div class="testimonial-container">
+
+					<?php
+						while ( $query -> have_posts() ) :
+							$query -> the_post();
+
+							if( function_exists('get_field')):?>
+
+							<div class="testimonial">
+
+								<?php if ( get_field( 'testimonial_text' ) ) : ?>
+									<!-- already wrapped in p tag via ACF -->
+										<?php the_field('testimonial_text');?>
+									<?php endif; ?> 
+
+									<?php if ( get_field( 'testimonial_author' ) ) : ?>
+										<p><?php the_field('testimonial_author');?></p>
+									<?php endif; ?> 
+
+							</div>
+
+							<?php
+							endif;
+				
+						endwhile;
+							wp_reset_postdata(); // Reset the post data to avoid database conflicts?>
+
+
+					</div>
 					
-					<?php
-				while ( $query -> have_posts() ) :
-					$query -> the_post();
-
-					if( function_exists('get_field')):?>
-
-						<?php if ( get_field( 'testimonial_text' ) ) : ?>
-							<?php the_field('testimonial_text');?>
-						<?php endif; ?> 
-
-						<?php if ( get_field( 'testimonial_author' ) ) : ?>
-							<?php the_field('testimonial_author');?>
-						<?php endif; ?> 
-
-					<?php
-					endif;
-		
-				endwhile;
-					wp_reset_postdata(); // Reset the post data to avoid database conflicts
+				<?php
 			endif;
 
 
@@ -127,29 +140,41 @@ require get_template_directory() . '/template-parts/content-social-nav.php';
 			if ( $query -> have_posts() ):
 				?>
 
-					<h1>Foote Notes Stuff</h1>
+				<h1>Foote Notes</h1>
 					
+				<div class="foote-note-container">
 					<?php
-				while ( $query -> have_posts() ) :
-					$query -> the_post();
+					while ( $query -> have_posts() ) :
+						$query -> the_post();
 
-					if( function_exists('get_field')):?>
+						if( function_exists('get_field')):?>
 
-					<!-- do I need to wrap the title in a conditonal -->
-					<?php if ( get_the_title() ) : ?>
-						<?php the_title(); ?>
-					<?php endif; ?> 
+						<!-- do I need to wrap the title in a conditonal -->
 
+						<div class="foote-note">
+
+							<?php if ( get_the_title() ) : ?>
+								<h3><?php the_title(); ?></h3>
+							<?php endif; ?> 
+
+							
+							<?php if ( get_field( 'foote_note_text' ) ) : ?>
+								<?php the_field('foote_note_text');?>
+							<?php endif; ?> 
 					
-					<?php if ( get_field( 'foote_note_text' ) ) : ?>
-						<?php the_field('foote_note_text');?>
-					<?php endif; ?> 
-			
+							<?php
+							endif;?>
+
+						</div>
+						
 					<?php
-					endif;
-	
-				endwhile;
-					wp_reset_postdata(); // Reset the post data to avoid database conflicts
+					endwhile;
+						wp_reset_postdata(); // Reset the post data to avoid database conflicts
+						?>
+
+
+				</div>
+			<?php	
 			endif;
 
 
@@ -164,30 +189,34 @@ require get_template_directory() . '/template-parts/content-social-nav.php';
 			$query = new WP_Query( $args );
 			 
 			if ( $query -> have_posts() ):
-				?>
+				?>	
+					<div class="youtube-container">
 
-					<h1>Youtube Video Stuff</h1>
-					
 					<?php
 				while ( $query -> have_posts() ) :
 					$query -> the_post();
 
 					if( function_exists('get_field')):?>
 
-						<!-- do I need to wrap the title in a conditonal -->
-						<?php if ( get_the_title() ) : ?>
-							<?php the_title(); ?>
-						<?php endif; ?> 
+					<div class="video-container">
+						<div class="youtube-video">
+								<?php if ( get_field( 'video' ) ) : ?>
+									<?php the_field('video');?>
+								<?php endif; ?> 
+						</div>
+
+					</div>
 						
-						<?php if ( get_field( 'video' ) ) : ?>
-							<?php the_field('video');?>
-						<?php endif; ?> 
+						
 
 					<?php
 					endif;
 		
 				endwhile;
 					wp_reset_postdata(); // Reset the post data to avoid database conflicts
+					?>
+					</div>
+			<?php		
 			endif;
 
 
@@ -204,7 +233,7 @@ require get_template_directory() . '/template-parts/content-social-nav.php';
 			if ( $query -> have_posts() ):
 				?>
 
-					<h1>Bio Stuff</h1>
+					<h1>Bio</h1>
 					
 					<?php
 				while ( $query -> have_posts() ) :

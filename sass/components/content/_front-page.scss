@@ -1,0 +1,67 @@
+//testimonial Section
+
+.testimonial-container {
+  margin: 0 2rem;
+}
+
+.testimonial {
+  margin: 0 auto;
+  padding: 1rem;
+  max-width: 25rem;
+}
+
+@media (min-width: 50em) {
+  .testimonial-container {
+    display: flex;
+    margin: 0 auto;
+    max-width: $maxWidth;
+  }
+}
+
+//foote note section
+.foote-note-container {
+  margin: 0 2rem;
+}
+
+.foote-note {
+  margin: 0 auto;
+  padding: 1rem;
+  max-width: 25rem;
+}
+
+@media (min-width: 50em) {
+  .foote-note-container {
+    display: flex;
+    margin: 0 auto;
+    max-width: $maxWidth;
+  }
+}
+
+//youtube video section
+
+.youtube-container {
+  //   display: flex;
+}
+
+.video-container {
+  width: 30rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.youtube-video {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
