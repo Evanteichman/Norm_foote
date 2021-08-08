@@ -37,16 +37,18 @@ get_header();
 
 			<article>
 				<?php if ( function_exists ( 'get_field' ) ) : ?>
-
-					<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2> 
 							
 					<?php if ( has_post_thumbnail() ) :
 						the_post_thumbnail();	
 					endif; ?>
-							
-					<?php if ( get_field( 'text' ) ) : ?>
-						<p><?php the_field('text'); ?></p>	
-					<?php endif; ?>
+
+					<div class="article-info">
+						<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2> 
+								
+						<?php if ( get_field( 'text' ) ) : ?>
+							<p><?php the_field('text'); ?></p>	
+						<?php endif; ?>
+					<div>
 							
 				<?php endif; ?>
 								

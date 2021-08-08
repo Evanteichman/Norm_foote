@@ -1,3 +1,13 @@
 body {
   background: $color__background-body; // Fallback for when there is no custom background color defined.
+
+    h1 {
+      text-align: center;
+    }
+
+    @media screen and (min-width: 40.75em) {
+      h1 {
+        margin-top: 7rem;
+      }
+    }
 }

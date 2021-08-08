@@ -1,0 +1,44 @@
+.post-type-archive-nf-foote-note {
+    
+    article {
+        display: flex;
+        flex-direction: column;
+        max-width: 90%;
+        margin: 3rem auto;
+
+        img {
+            max-width: 20rem;
+            align-self: center;
+        }
+
+        h2 {
+            
+            margin-bottom: 0;
+            
+            a {
+                color: black;
+                text-decoration: none; 
+            }
+            
+        }
+
+        p {
+            
+            padding: 0;
+        }
+    } 
+
+    @media screen and (min-width: 850px) {
+        article {
+            flex-direction: row;
+
+            img {
+                padding-right: 1rem;
+            }
+
+            .article-info {
+                padding-left: 1rem;
+            }
+        }
+    }
+}
