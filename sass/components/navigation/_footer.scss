@@ -2,8 +2,24 @@ footer {
     margin: 0 auto 7rem;
     text-align: center;
 
+    @media screen and (min-width: 550px) {
+        .footer-contact-links {
+            display: flex;
+            justify-content: center;
+
+            div {
+                padding: 1rem;
+            }
+        }
+    }
+    
+
     .footer-social-links {
-        
+        svg{
+            &:hover {
+                fill: blue;
+            }
+        }
     }
 
     .developer-credits {

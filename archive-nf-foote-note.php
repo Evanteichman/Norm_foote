@@ -39,14 +39,15 @@ get_header();
 				<?php if ( function_exists ( 'get_field' ) ) : ?>
 							
 					<?php if ( has_post_thumbnail() ) :
-						the_post_thumbnail();	
+						the_post_thumbnail('foote-note-image');	
 					endif; ?>
 
 					<div class="article-info">
 						<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2> 
 								
 						<?php if ( get_field( 'text' ) ) : ?>
-							<p><?php the_field('text'); ?></p>	
+							<p><?php the_excerpt();?></p>	
+							<a class="read-more href="<?php the_permalink(); ?>">Read More</a>
 						<?php endif; ?>
 					<div>
 							
