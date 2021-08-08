@@ -1,0 +1,28 @@
+.single-nf-foote-note {
+
+    article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1rem;
+
+        img {
+            justify-self: center;
+        }
+    }
+
+    @media screen and (min-width: 900px) {
+        article {
+            flex-direction: row;
+
+            img {
+                padding-right: 1rem;
+                align-content: center;
+            }
+
+            p {
+                padding-left: 1rem;
+            }
+        }
+    }
+}

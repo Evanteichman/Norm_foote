@@ -47,7 +47,7 @@ get_header();
 								
 						<?php if ( get_field( 'text' ) ) : ?>
 							<p><?php the_excerpt();?></p>	
-							<a class="read-more href="<?php the_permalink(); ?>">Read More</a>
+							<a class="read-more" href="<?php the_permalink(); ?>">Read More</a>
 						<?php endif; ?>
 					<div>
 							

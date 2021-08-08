@@ -47,6 +47,7 @@ if ( ! function_exists( 'nf_theme_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 		add_image_size( 'foote-note-image', 300, 200, true );
+		add_image_size( 'single-foote-note-image', 500, 350, true );
 
 		// This theme uses wp_nav_menu() in one location.
 		// register social menu
@@ -292,24 +293,4 @@ function acf_read_more_foote_note($more){
 
 add_filter('excerpt_more', 'acf_read_more_foote_note');
 
-
-
-
-//excerpt length
-// function foote_note_excerpt_length($length) {
-// 	if(get_post_type('post-type-archive-nf-foote-note')){
-// 		return 30;
-// 	}else{
-// 		return $length;
-// 	}
-// }
-// add_filter('excerpt_length', 'foote_note_excerpt_length', 999);
-
-//Edit the Read More Link
-// function nf_excerpt_more($more){
-// 	$more = '... <a class="read-more" href="'. get_permalink(). '">Continue Reading</a>';
-// 	return $more;
-// }
-
-// add_filter('excerpt_more', 'nf_excerpt_more');
 

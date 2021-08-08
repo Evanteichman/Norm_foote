@@ -16,13 +16,14 @@ get_header();
 		while ( have_posts() ) :
 			the_post(); ?>
 
-			<article>
+			
 				<?php if ( function_exists ( 'get_field' ) ) : ?>
 
 					<h1><?php the_title(); ?></h1> 
-							
+					
+					<article>		
 					<?php if ( has_post_thumbnail() ) :
-						the_post_thumbnail();	
+						the_post_thumbnail('single-foote-note-image');	
 					endif; ?>
 							
 					<?php if ( get_field( 'text' ) ) : ?>
