@@ -26,7 +26,7 @@ get_header();
 			//change the size attribut in the img tag to change the size of the output images., not sure if it wil be better to have large images output and then change size on the front end using css
 			$images = get_field('gallery');
 			if( $images ): ?>
-				<div>
+				<div class="all-photos-gallery">
 					<?php foreach( $images as $image ): ?>
 			
 						<img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />

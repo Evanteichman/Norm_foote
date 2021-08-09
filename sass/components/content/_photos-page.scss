@@ -1,0 +1,19 @@
+.page-id-24 {
+
+    .all-photos-gallery {
+        max-width: $maxWidth;
+        margin: 0 auto; 
+        background-color: aliceblue;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly; 
+        align-items: center;
+
+        img {
+            min-width: 15rem;
+            max-width: 25rem;
+            padding: 1rem;
+        }
+    }
+   
+}
