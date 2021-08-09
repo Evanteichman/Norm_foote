@@ -34,10 +34,10 @@
         }
     } 
 
-    @media screen and (min-width: 850px) {
+    @media screen and (min-width: 570px) {
         article {
             flex-direction: row;
-            max-width: 70em;
+            max-width: $maxWidth;
             margin: 3em auto;
 
             img {

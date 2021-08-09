@@ -46,7 +46,7 @@ if ( ! function_exists( 'nf_theme_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
-		add_image_size( 'foote-note-image', 300, 200, true );
+		add_image_size( 'foote-note-image', 350, 250, true );
 		add_image_size( 'single-foote-note-image', 500, 350, true );
 
 		// This theme uses wp_nav_menu() in one location.
