@@ -1,0 +1,38 @@
+.post-type-archive-nf-concert {
+
+    .concert-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        max-width: $maxWidth;
+        margin: 0 auto;
+        padding: 1rem;
+        border-bottom: 1px solid black;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    @media screen and (min-width: 750px) {
+        section {
+            flex-direction: row;
+            justify-content: space-between;
+            width: 20rem;
+        }
+    }
+    
+    .button {
+        border-radius: 10px;
+        text-decoration: none;
+        padding: 0.5rem 0.75rem;
+        background-color: darkblue;
+        color: white;
+    }
+}
