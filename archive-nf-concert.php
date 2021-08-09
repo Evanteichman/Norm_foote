@@ -41,26 +41,29 @@ get_header();
 							$query -> the_post();
 
 							if( function_exists('get_field')):?>
-								<!-- add proper html -->
-								<?php if ( get_field( 'date' ) ) : ?>
-									<?php the_field('date');?>
-								<?php endif; ?> 
-
-								<?php if ( get_field( 'time' ) ) : ?>
-									<?php the_field('time');?>
-								<?php endif; ?> 
+							<div class="concert-row">
 								
-								<?php if ( get_field( 'location' ) ) : ?>
-									<?php the_field('location');?>
-								<?php endif; ?> 
+								<section class="concert-info"> 
+									<?php if ( get_field( 'date' ) ) : ?>
+										<p><?php the_field('date');?></p>
+									<?php endif; ?> 
+
+									<?php if ( get_field( 'time' ) ) : ?>
+										<p><?php the_field('time');?></p>
+									<?php endif; ?> 
+									
+									<?php if ( get_field( 'location' ) ) : ?>
+										<p><?php the_field('location');?></p>
+									<?php endif; ?> 
+								</section>
 								
 								<?php 
 								$link = get_field('link');
 								if( $link ): ?>
 									<a class="button" href="<?php echo esc_url( $link ); ?>">Buy Ticket</a>
 								<?php endif; ?>
-								<br>
 								
+								</div>
 							<?php
 							
 							endif;
