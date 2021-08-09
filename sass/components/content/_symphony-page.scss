@@ -1,0 +1,13 @@
+.page-id-28 {
+    
+    main {
+        padding: 1rem;
+    }
+    
+    @media screen and (min-width: 40.75em) {
+        main {
+            max-width: $maxWidth;
+            margin: 7rem auto;
+        }
+    }
+}
