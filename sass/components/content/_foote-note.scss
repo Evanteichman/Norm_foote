@@ -6,9 +6,14 @@
         max-width: 90%;
         margin: 3rem auto;
         cursor: pointer;
+        border: 2px solid #2b3579;
+        border-radius: 10px;
+        padding: 1rem 1rem 2.5rem;
+        box-shadow: 2px 2px 8px #888888;
 
         img {
-            align-self: center;
+            align-self: flex-start;
+            border-radius: inherit;
         }
 
         h2 {
@@ -23,29 +28,44 @@
 
         p {
             padding: 0;
+            max-width: 30rem;
         }
 
         .read-more {
-            border: 2px solid black;
+            color:white;
             text-decoration: none;
             padding: 0.5rem;
             text-transform: uppercase;
-            color: blue;
+            background-color: #2b3579;
+            border-radius: 10px;
         }
     } 
 
-    @media screen and (min-width: 570px) {
+    @media screen and (min-width: 700px) {
         article {
             flex-direction: row;
             max-width: $maxWidth;
-            margin: 3em auto;
+            margin: 1rem;
 
             img {
-                padding-right: 1em;
+                align-self: center;
+                margin-top: 1.5em;
             }
 
             .article-info {
                 padding-left: 1em;
+                margin-left: 1rem;
+            }
+        }
+    }
+
+    @media screen and (min-width: 1000px) {
+        article {
+            margin: 3em auto;
+            padding-bottom: 1rem;
+
+            img {
+                margin-top: initial;
             }
         }
     }
