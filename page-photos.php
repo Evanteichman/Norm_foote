@@ -19,7 +19,11 @@ get_header();
 
 		<?php
 		while ( have_posts() ) :
-			the_post();
+			the_post(); ?>
+
+			<h1>Photos</h1>
+
+			<?php
 			
 			// https://www.advancedcustomfields.com/resources/gallery/
 			//not sure if image titles are needed, or if we want them to be clicked and then enlarged. Outputting a simple gallery for now.

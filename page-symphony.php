@@ -25,6 +25,8 @@ get_header();
 			
 			?>
 
+			<h1>Symphony</h1>
+
 			<section class="symphony-content">
 			<?php if ( function_exists ( 'get_field' ) ) : ?>
 
