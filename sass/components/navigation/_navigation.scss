@@ -50,7 +50,7 @@
     z-index: 10;
 
     &:hover {
-      background-color: lightcoral;
+      background-color: #F08A4B;
       border: none;
     }
   }
@@ -74,7 +74,7 @@
       text-align: center;
 
       &:hover {
-        background: #4056a1;
+        background: #004964;
         color: white;
       }
     }
@@ -130,8 +130,8 @@
     }
   }
 
-  li.logo {
-    display: initial;
+  li.logo.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-home.menu-item-140 {
+      display: block;
   }
 
   .menu-toggle,

@@ -2,11 +2,26 @@ footer {
     margin: 0 auto 7rem;
     text-align: center;
 
+    h2 {
+        color: #459EA3;
+        margin: 3rem auto 0;
+    }
+
+    h3 {
+        text-decoration: underline;
+    }
+
+    .footer-contact-links {
+
+        a {
+            color: #459EA3; 
+        }
+    }
+
     @media screen and (min-width: 550px) {
         .footer-contact-links {
             display: flex;
             justify-content: center;
-  
 
             div {
                 padding: 1rem;
@@ -16,9 +31,13 @@ footer {
     
 
     .footer-social-links {
-        svg{
+        svg {
+            fill: #A30B37;
+            width: 32px;
+            height: 32px;
+
             &:hover {
-                fill: blue;
+                fill: #459EA3;
             }
         }
     }
@@ -26,11 +45,15 @@ footer {
     .developer-credits {
         a {
             text-decoration: none;
-            color: black;
+            color: #459EA3;
 
             &:hover {
-                color:blue;
+                color:#A30B37;
             }
+        }
+
+        p {
+            margin-bottom: 0;
         }
     }
 }
