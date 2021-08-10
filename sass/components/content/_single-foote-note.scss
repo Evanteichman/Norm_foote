@@ -10,6 +10,11 @@
             justify-self: center;
             margin: 0 auto;
         }
+
+        p {
+            max-width: 31rem;
+            margin: 1rem auto;
+        }
     }
 
     // Underline animation modified from https://codepen.io/gabrielcojea/pen/ExPaBzQ
@@ -22,11 +27,12 @@
 
         a {
             text-decoration: none;
-            color: black;
+            color: #004964;
+            padding: 0.5rem;
             position: relative;
 
             &:hover {
-                color: blue;
+                color: #459EA3;
             }
         }
           
@@ -37,7 +43,7 @@
             right: 0;
             width: 0;
             height: 2px;
-            background-color: blue;
+            background-color: #004964;
             transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         }
           
