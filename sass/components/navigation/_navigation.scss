@@ -6,6 +6,7 @@
   display: flex;
   width: 100%;
   background-color: white;
+  z-index: 100;
 
   li.logo {
     display: none;
@@ -132,6 +133,12 @@
 
   li.logo.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-home.menu-item-140 {
       display: block;
+
+      img {
+        height: 5rem;
+        width: auto;
+        margin-top: -1.5rem;
+      }
   }
 
   .menu-toggle,
