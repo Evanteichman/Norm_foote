@@ -107,10 +107,13 @@
 //bio section
 
 .bio-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  max-width: $maxWidth;
+  margin: 0 auto;
+  justify-items: center;
   img {
     border-radius: 50%;
     max-width: 20rem;
@@ -119,11 +122,45 @@
 
 @media (min-width: 50em) {
   .bio-container {
-    flex-direction: row;
-    max-width: $maxWidth;
-    margin: 0 auto;
-    p {
-      padding-left: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 3fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "img text"
+      "quote quote";
+    width: 100%;
+    height: 100%;
+
+    .img {
+      grid-area: img;
+    }
+
+    .text {
+      grid-area: text;
+    }
+
+    .quote {
+      grid-area: quote;
+    }
+  }
+}
+
+//hero image
+
+figure.wp-block-image.size-full.is-resized {
+  img {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+  }
+}
+
+@media (min-width: 50em) {
+  figure.wp-block-image.size-full.is-resized {
+    img {
+      padding-top: 3rem;
     }
   }
 }
