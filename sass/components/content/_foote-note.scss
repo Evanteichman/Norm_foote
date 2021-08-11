@@ -6,10 +6,14 @@
         max-width: 90%;
         margin: 3rem auto;
         cursor: pointer;
-        border: 2px solid #004964;
         border-radius: 10px;
         padding: 1rem 1rem 2.5rem;
         box-shadow: 2px 2px 8px #888888;
+        
+        &:hover {
+            box-shadow: 2px 2px 8px #5a5a5a;
+            transform: scale(1.01);
+        }
 
         img {
             align-self: flex-start;
@@ -27,8 +31,9 @@
         }
 
         p {
-            padding: 0;
             max-width: 30rem;
+            padding-bottom: 1em;
+            margin-bottom: none;
         }
 
         .read-more {
@@ -37,11 +42,14 @@
             padding: 0.5rem;
             text-transform: uppercase;
             background-color: #459EA3;
+            border: 2px solid #459EA3;
             border-radius: 10px;
+            transition: all 0.3s;
 
-            &:hover {
-                color: black;
-                background-color: #F08A4B;
+            &:hover,
+            &:focus {
+                color: #459EA3;
+                background-color: transparent;
             }
         }
     } 
@@ -60,6 +68,7 @@
             .article-info {
                 padding-left: 1em;
                 margin-left: 1rem;
+                margin-bottom: 1rem;
             }
         }
     }
@@ -71,6 +80,10 @@
 
             img {
                 margin-top: initial;
+            }
+
+            .article-info {
+                margin-bottom: 2rem;
             }
         }
     }
