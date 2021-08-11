@@ -25,7 +25,7 @@ get_header();
 			
 			?>
 
-			<h1>Outreach</h1>
+			<h1> <?php the_title();	?> </h1>	
 
 			<section class="intro">
                 <?php if ( function_exists ( 'get_field' ) ) : ?>
