@@ -35,23 +35,28 @@ get_header();
 
 					// Image code snippet from https://www.advancedcustomfields.com/resources/image/
 					if( !empty( $image ) ): ?>
-						<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+						<img class="hero-img" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
 					<?php endif; ?>
 				<?php endif; ?>
+
+				<div class="the-symphony-content">
 			
 				<?php if ( get_field( 'symphony_page_information' ) ) : ?>
 					<p> <?php the_field( 'symphony_page_information' ); ?> </p>
 				<?php endif; ?> 
 					
 				<!-- Gallery code snippet from https://www.advancedcustomfields.com/resources/gallery/ -->
-				<?php  if ( get_field( 'symphony_photo_gallery' ) ) :
+				<?php if ( get_field( 'symphony_photo_gallery' ) ) :
 					$images = get_field('symphony_photo_gallery');
 					if( $images ): ?>
+					<div class="photo-gallery">
 						<?php foreach( $images as $image ): ?>
 							<img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
 						<?php endforeach; ?>
+					</div>
 					<?php endif; ?>
 				<?php endif; ?>
+				</div>
 
 			<?php endif; ?>
 		</section> 
