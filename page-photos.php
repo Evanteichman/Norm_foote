@@ -25,9 +25,6 @@ get_header();
 
 			<?php
 			
-			// https://www.advancedcustomfields.com/resources/gallery/
-			//not sure if image titles are needed, or if we want them to be clicked and then enlarged. Outputting a simple gallery for now.
-			//change the size attribut in the img tag to change the size of the output images., not sure if it wil be better to have large images output and then change size on the front end using css
 			$images = get_field('gallery');
 			if( $images ): ?>
 				<div class="all-photos-gallery">
@@ -38,6 +35,10 @@ get_header();
 					<?php endforeach; ?>
 				</div>
 			<?php endif; 
+
+			do_shortcode('[gallery ids="330,328,325,324,323,322,321,320,319,318,317,315,314,313" margin="2" scale="1.1" maxrowheight="200" rowspan="0" intime="100" outtime="100" captions="off" linked_image_size="large" orderby="menu_order" link="file" size="medium" lightbox="simplelightbox" effect="bubble" lastrowbehavior="last_row_same_height" captions_effect="slide_up" captions_intime="200" captions_outtime="200" rel="rgg" type="rgg"] ');
+
+
 
 
 			// get_template_part( 'template-parts/content', 'page' );
