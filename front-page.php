@@ -28,10 +28,15 @@ require get_template_directory() . '/template-parts/content-social-nav.php';
 			the_content();
 
 			$args = array(
-				'post_type' 		=> 'nf-hero-slider',
+				'post_type' 		=> 'nf-foote-note',
 				'posts_per_page' 	=> -1,
-				'order_by'			=> 'title',
-				'order'				=> 'ASC'
+				'tax_query' 		=> array(
+					array(
+						'taxonomy' => 'nf-foote-note-category',
+						'field'    => 'slug',
+						'terms'    => 'hero-slider'
+					)
+				)
 			);
 			
 			$query = new WP_Query( $args );
@@ -55,7 +60,7 @@ require get_template_directory() . '/template-parts/content-social-nav.php';
 										<div class="swiper-info">
 										<h2> <?php the_title(); ?></h2>
 											<p class="slide-text"><?php the_excerpt(); ?></p>
-											<a class="slide-link" href="<?php the_field('hero_link'); ?>">Hero link</a>
+											<a class="read-more" href="<?php the_permalink(); ?>">Read More</a>
 											
 										</div>
 											
@@ -102,15 +107,11 @@ require get_template_directory() . '/template-parts/content-social-nav.php';
 
 						<div class="single-player">
 							<!-- do I need to wrap the title in a conditonal -->
-							<?php if ( get_the_title() ) : ?>
-								<h3><?php the_title(); ?></h3>
-							<?php endif; ?> 
-
 							<?php if ( get_field( 'music_player' ) ) : ?>
 								<?php the_field('music_player');?>
 							<?php endif; ?> 
 
-			</div>
+						</div>
 						
 				<?php
 				endif;

@@ -3,7 +3,7 @@ const swiper = new Swiper('.swiper-container', {
     // autoHeight: true,
     pagination: {
         el: '.swiper-pagination',
-        clickable: true,
+        // clickable: true,
     },
     navigation: {
         nextEl: '.swiper-button-next',
