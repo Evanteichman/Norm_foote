@@ -47,7 +47,7 @@ if ( ! function_exists( 'nf_theme_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 		add_image_size( 'foote-note-image', 350, 250, true );
-		add_image_size( 'single-foote-note-image', 500, 350, true );
+		add_image_size( 'single-foote-note-image', 400, 350, true );
 
 		// This theme uses wp_nav_menu() in one location.
 		// register social menu
