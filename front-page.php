@@ -20,11 +20,13 @@ require get_template_directory() . '/template-parts/content-social-nav.php';
 
 	<main id="primary" class="site-main">
 
+		
+
 		<?php
 		while ( have_posts() ) :
 			the_post();
+			the_content();
 
-			
 			$args = array(
 				'post_type' 		=> 'nf-hero-slider',
 				'posts_per_page' 	=> -1,
@@ -49,15 +51,14 @@ require get_template_directory() . '/template-parts/content-social-nav.php';
 									if( function_exists('get_field')):?>
 
 										<div class="swiper-slide">
-											<!-- ask about this do I need to wrap the post thumbnail in a conditional statement -->
-											<?php if ( get_the_post_thumbnail() ) : ?>
-												<?php the_post_thumbnail();?>
-											<?php endif; ?> 
-											<div class="slide-info">
-												<h2> <?php the_title(); ?></h2>
-												<p class="slide-text"><?php the_excerpt(); ?></p>
-												<a class="slide-link" href="<?php the_field('hero_link'); ?>">Hero link</a>
-											</div>
+											
+										<div class="swiper-info">
+										<h2> <?php the_title(); ?></h2>
+											<p class="slide-text"><?php the_excerpt(); ?></p>
+											<a class="slide-link" href="<?php the_field('hero_link'); ?>">Hero link</a>
+											
+										</div>
+											
 										</div>
 
 									<?php endif; ?> 
@@ -153,15 +154,15 @@ require get_template_directory() . '/template-parts/content-social-nav.php';
 							<?php 
 							$image = get_field('bio_image');
 							if( !empty( $image ) ): ?>
-								<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+								<img class="img" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
 							<?php endif; 
 
 							 if ( get_field( 'bio_text' ) ) : ?>
-								<?php the_field('bio_text');?>
+								<div class="text"><?php the_field('bio_text');?></div>
 							<?php endif; ?>
 
 							<?php if ( get_field( 'quote' ) ) : ?>
-								<?php the_field('quote');?>
+								<p class="quote"><?php the_field('quote');?></p>
 							<?php endif; ?> 
 							
 						<?php	
