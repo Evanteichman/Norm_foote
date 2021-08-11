@@ -21,10 +21,10 @@ get_header();
 		while ( have_posts() ) :
 			the_post(); ?>
 
-			<h1>Photos</h1>
-
-			<?php
+			<h1> <?php the_title();	?> </h1>	
 			
+			<?php
+
 			$images = get_field('gallery');
 			if( $images ): ?>
 				<div class="all-photos-gallery">
