@@ -91,26 +91,28 @@ require get_template_directory() . '/template-parts/content-social-nav.php';
 
 		<section class="music-player-section">
 
-			<div class="music-player-container">
+			<h1>Music Player Stuff</h1>
+				<div class="music-player-container">
 				
 				<?php
-				while ( $query -> have_posts() ) :
-					$query -> the_post();
+			while ( $query -> have_posts() ) :
+				$query -> the_post();
 
-					if( function_exists('get_field')):?>
+				if( function_exists('get_field')):?>
 
-						<div class="single-player">
-							<!-- do I need to wrap the title in a conditonal -->
-							<?php if ( get_the_title() ) : ?>
-								<h3><?php the_title(); ?></h3>
-							<?php endif; ?> 
+					<div class="single-player">
+						<!-- do I need to wrap the title in a conditonal -->
+						<?php if ( get_the_title() ) : ?>
+							<h3><?php the_title(); ?></h3>
+						<?php endif; ?> 
 
-							<?php if ( get_field( 'music_player' ) ) : ?>
-								<?php the_field('music_player');?>
-							<?php endif; ?> 
+						<?php if ( get_field( 'music_player' ) ) : ?>
+							<?php the_field('music_player');?>
+						<?php endif; ?> 
 
-			</div>
-						
+					</div>
+					
+					
 				<?php
 				endif;
 
@@ -121,8 +123,8 @@ require get_template_directory() . '/template-parts/content-social-nav.php';
 				</div>
 		</section>
 		
-	
-	<?php	
+			<?php
+		
 	endif;
 
 
@@ -139,7 +141,6 @@ require get_template_directory() . '/template-parts/content-social-nav.php';
 			if ( $query -> have_posts() ):
 				?>
 				<section class="bio-section">
-
 					<h1>Bio</h1>
 						
 					<div class="bio-container">
@@ -155,16 +156,12 @@ require get_template_directory() . '/template-parts/content-social-nav.php';
 							if( !empty( $image ) ): ?>
 								<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
 							<?php endif; 
-
+							
 							 if ( get_field( 'bio_text' ) ) : ?>
 								<?php the_field('bio_text');?>
-							<?php endif; ?>
-
-							<?php if ( get_field( 'quote' ) ) : ?>
-								<?php the_field('quote');?>
-							<?php endif; ?> 
+							<?php endif; 
 							
-						<?php	
+							
 						endif;
 			
 					endwhile;
@@ -177,6 +174,55 @@ require get_template_directory() . '/template-parts/content-social-nav.php';
 				</section>
 			<?php	
 			endif;
+
+
+			// output the testimonials
+			$args = array(
+				'post_type' 		=> 'nf-testimonial',
+				'posts_per_page' 	=> -1,
+				'order_by'			=> 'title',
+				'order'				=> 'ASC'
+			);
+			 
+			$query = new WP_Query( $args );
+			 
+			if ( $query -> have_posts() ):
+				?>
+
+					<h1>Testimonials</h1>
+
+					<div class="testimonial-container">
+
+					<?php
+						while ( $query -> have_posts() ) :
+							$query -> the_post();
+
+							if( function_exists('get_field')):?>
+
+							<div class="testimonial">
+
+								<?php if ( get_field( 'testimonial_text' ) ) : ?>
+									<!-- already wrapped in p tag via ACF -->
+										<?php the_field('testimonial_text');?>
+									<?php endif; ?> 
+
+									<?php if ( get_field( 'testimonial_author' ) ) : ?>
+										<p><?php the_field('testimonial_author');?></p>
+									<?php endif; ?> 
+
+							</div>
+
+							<?php
+							endif;
+				
+						endwhile;
+							wp_reset_postdata(); // Reset the post data to avoid database conflicts?>
+					</div>
+					
+				<?php
+			endif;
+
+
 
 			// output the foote notes
 			$args = array(
@@ -212,8 +258,6 @@ require get_template_directory() . '/template-parts/content-social-nav.php';
 							<?php if ( get_field( 'foote_note_text' ) ) : ?>
 								<?php the_field('foote_note_text');?>
 							<?php endif; ?> 
-
-							
 					
 							<?php
 							endif;?>
