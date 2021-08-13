@@ -152,6 +152,11 @@ function nf_theme_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
+	if (is_page( $page = '24' ) ) {
+		wp_enqueue_script( 'photo-gallery', get_template_directory_uri() . '/js/photo-gallery.js', array(), '1.0.0', true );
+	}
+
+
 	// Enqueue Swiper on the Homepage
 	if (is_front_page()) {
 		wp_enqueue_style(

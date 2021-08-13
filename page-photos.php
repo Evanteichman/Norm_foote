@@ -27,7 +27,7 @@ get_header();
 
 			$images = get_field('gallery');
 			if( $images ): ?>
-				<div class="all-photos-gallery">
+				<div id="photos" class="all-photos-gallery">
 					<?php foreach( $images as $image ): ?>
 			
 						<img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />

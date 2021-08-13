@@ -125,17 +125,39 @@
     left: initial;
     top: 0;
     z-index: 200;
+    ul {
+        li {
+            background: transparent;
 
-    li {
-      background: initial;
+            a:hover {
+              color: black;
+            }
 
-      &:hover {
-        text-decoration: underline;
-        background: transparent;
-        color: black;
-      }
+            &:hover {
+              background: transparent;
+            }
+        }
     }
+
+    a::before {
+      content: '';
+      position: absolute;
+      bottom: 1.5rem;
+      right: 0;
+      width: 0;
+      height: 2px;
+      background-color: #004964;
+      transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
   }
+
+  @media (hover: hover) and (pointer: fine) {
+      a:hover::before {
+          left: 0;
+          right: auto;
+          width: 100%;
+      }
+  }
+}
 
   li.logo.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-home.menu-item-140 {
       display: block;
