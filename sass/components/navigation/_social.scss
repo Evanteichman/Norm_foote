@@ -1,0 +1,23 @@
+nav.social-navigation {
+    background-color: white;
+    padding: 0.5rem;
+
+    svg {
+        fill: $nf-light;
+        z-index: 500;
+
+        &:hover,
+        &:focus {
+            fill: $nf-accent;
+        }
+    }
+
+    .fade-in {
+        opacity: 0;
+        transition: opacity 400ms ease-in;
+      }
+      
+    .fade-in.appear {
+        opacity: 1;
+    }
+}

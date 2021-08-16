@@ -9,3 +9,24 @@
 @mixin column-width($numberColumns: 3) {
 	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
+
+//Button Styling
+@mixin button {
+		color: white;
+		text-decoration: none;
+		padding: 0.5rem;
+		text-transform: uppercase;
+		// background-color: #459EA3;
+		// border: 2px solid #459EA3;
+		background-color: $nf-accent;
+		border: 2px solid $nf-accent;
+		border-radius: 10px;
+		transition: all 0.3s;
+
+		&:hover,
+		&:focus {
+			// color: #459EA3;
+			color: $nf-accent;
+			background-color: transparent;
+		}
+	}

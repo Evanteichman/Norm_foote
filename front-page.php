@@ -12,11 +12,7 @@
  * @package norm_foote_theme
  */
 
-get_header();
-
-//social menu
-require get_template_directory() . '/template-parts/content-social-nav.php';
-?>
+get_header(); ?>
 
 	<main id="primary" class="site-main">
 
@@ -58,7 +54,7 @@ require get_template_directory() . '/template-parts/content-social-nav.php';
 										<div class="swiper-slide">
 											
 										<div class="swiper-info">
-										<h2> <?php the_title(); ?></h2>
+										<h3> <?php the_title(); ?></h3>
 											<p class="slide-text"><?php the_excerpt(); ?></p>
 											<a class="read-more" href="<?php the_permalink(); ?>">Read More</a>
 											
@@ -71,16 +67,21 @@ require get_template_directory() . '/template-parts/content-social-nav.php';
 							<?php endwhile; ?>
 						</div>
 
-								<div class="swiper-pagination"></div>
-								<div class="swiper-button-prev"></div>
-								<div class="swiper-button-next"></div>
+								<!-- <div class="swiper-pagination"></div> -->
+								
 					</div>
+								<div class="swiper-button swiper-button-prev"></div>
+								<div class="swiper-button swiper-button-next"></div>
 				</section>
 
 			
 			<?php
 				wp_reset_postdata();
 			endif;
+
+			//social menu
+require get_template_directory() . '/template-parts/content-social-nav.php';
+
 			
 	// output the music payers
 	$args = array(
@@ -142,7 +143,7 @@ require get_template_directory() . '/template-parts/content-social-nav.php';
 				?>
 				<section class="bio-section">
 
-					<h1>Bio</h1>
+					<h2>About Norman</h2>
 						
 					<div class="bio-container">
 
@@ -193,7 +194,7 @@ require get_template_directory() . '/template-parts/content-social-nav.php';
 			if ( $query -> have_posts() ):
 				?>
 
-				<h1>Foote Notes</h1>
+				<h2>Foote Notes</h2>
 					
 				<div class="foote-note-container">
 					<?php

@@ -29,10 +29,6 @@
     }
     
     .button {
-        border-radius: 10px;
-        text-decoration: none;
-        padding: 0.5rem 0.75rem;
-        background-color: darkblue;
-        color: white;
+        @include button;
     }
 }
