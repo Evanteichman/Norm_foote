@@ -80,6 +80,5 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-<script src="./scripts/fadeIn.js"></script>
 </body>
 </html>

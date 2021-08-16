@@ -15,7 +15,6 @@ get_header();
 		<?php
 		while ( have_posts() ) :
 			the_post(); ?>
-
 			
 				<?php if ( function_exists ( 'get_field' ) ) : ?>
 
@@ -47,5 +46,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-// get_sidebar();
 get_footer();

@@ -24,23 +24,22 @@ get_header();
 
 			<?php
 
-					// output the concerts
-
-					$args = array(
-						'post_type' 		=> 'nf-concert',
-						'posts_per_page' 	=> -1,
-						'order_by'			=> 'title',
-						'order'				=> 'ASC'
-					);
+				// output the concerts
+				$args = array(
+					'post_type' 		=> 'nf-concert',
+					'posts_per_page' 	=> -1,
+					'order_by'			=> 'title',
+					'order'				=> 'ASC'
+				);
 					
-					$query = new WP_Query( $args );
+				$query = new WP_Query( $args );
 					
-					if ( $query -> have_posts() ):
+				if ( $query -> have_posts() ):
 						
-						while ( $query -> have_posts() ) :
-							$query -> the_post();
+					while ( $query -> have_posts() ) :
+						$query -> the_post();
 
-							if( function_exists('get_field')):?>
+						if( function_exists('get_field')):?>
 							<div class="concert-row">
 								
 								<section class="concert-info"> 
@@ -63,33 +62,22 @@ get_header();
 									<a class="button" href="<?php echo esc_url( $link ); ?>">Buy Ticket</a>
 								<?php endif; ?>
 								
-								</div>
-							<?php
-							
-							endif;
-							wp_reset_postdata(); // Reset the post data to avoid database conflicts
-						endwhile;
-							
-					endif;
+							</div>
+							<?php endif; ?>
+							<?php wp_reset_postdata(); ?> // Reset the post data to avoid database conflicts
+						<?php endwhile; ?>
+					<?php endif; ?>
+					<?php
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				// get_template_part( 'template-parts/content', get_post_type() );
+					the_posts_navigation();
 
-			the_posts_navigation();
-
-		else :
+				else :
 
 			get_template_part( 'template-parts/content', 'none' );
 
-		endif;
-		?>
+		endif; ?>
 
 	</main><!-- #main -->
 
 <?php
-// get_sidebar();
 get_footer();
