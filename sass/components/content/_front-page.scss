@@ -116,7 +116,16 @@
   justify-items: center;
   img {
     border-radius: 50%;
-    max-width: 20rem;
+    padding: 1rem;
+    // max-width: 20rem;
+  }
+
+  p.quote {
+    font-size: 1.25rem;
+    color: $nf-blue;
+    text-align: center;
+    margin-bottom: 0.1rem;
+    max-width: 40rem;
   }
 }
 

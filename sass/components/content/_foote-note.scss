@@ -37,20 +37,7 @@
         }
 
         .read-more {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem;
-            text-transform: uppercase;
-            background-color: #459EA3;
-            border: 2px solid #459EA3;
-            border-radius: 10px;
-            transition: all 0.3s;
-
-            &:hover,
-            &:focus {
-                color: #459EA3;
-                background-color: transparent;
-            }
+            @include button;
         }
     } 
 

@@ -4,20 +4,58 @@
   left: 0;
   right: 0;
   z-index: 100;
-}
-.swiper-wrapper {
-  // padding: 10rem;
-  width: 20rem;
-}
 
-.swiper-slide {
-}
+  a.read-more {
+    @include button;
+  }
 
-.swiper-info {
-  margin-top: 2rem;
-  margin-left: 5rem;
-  padding: 1rem;
-  width: 20rem;
-  background-color: rgba($color: #000000, $alpha: 0.5);
-  color: white;
+  .swiper-wrapper {
+    width: 20rem;
+  }
+
+  .swiper-info {
+    margin-top: 6rem;
+    padding: 1rem;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    color: white;
+  }
+
+  @media screen and (min-width: 500px) {
+    .swiper-info {
+      max-width: 30rem;
+      margin: 12rem 1rem 0 1rem;
+    }
+
+    .swiper-button-prev:after,
+    .swiper-container-rtl .swiper-button-next:after,
+    .swiper-button-next:after,
+    .swiper-container-rtl .swiper-button-prev:after {
+        margin-top: -8rem !important;
+    }
+  }
+
+  //Swiper Buttons
+  .swiper-button-prev:after,
+  .swiper-container-rtl .swiper-button-next:after,
+  .swiper-button-next:after,
+  .swiper-container-rtl .swiper-button-prev:after {
+      background-color: white;
+      color: $nf-dark;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      margin-top: 30rem;
+  }
+
+  .swiper-button-prev:after,
+  .swiper-container-rtl .swiper-button-next:after {
+      padding: 0.5rem 1.25rem 0.5rem 1rem;
+      margin-left: 2rem;
+  }
+
+  .swiper-button-next:after,
+  .swiper-container-rtl .swiper-button-prev:after {
+      padding: 0.5rem 1rem 0.5rem 1.25rem;
+      margin-right: 2rem;
+  }
+
 }

@@ -3,7 +3,6 @@ footer {
     text-align: center;
 
     h2 {
-        color: #459EA3;
         margin: 3rem auto 0;
     }
 
@@ -14,7 +13,7 @@ footer {
     .footer-contact-links {
 
         a {
-            color: #459EA3; 
+            color: $nf-blue; 
         }
     }
 
@@ -32,12 +31,12 @@ footer {
 
     .footer-social-links {
         svg {
-            fill: #A30B37;
+            fill: $nf-accent;
             width: 32px;
             height: 32px;
 
             &:hover {
-                fill: #459EA3;
+                fill: $nf-light;
             }
         }
     }
@@ -45,10 +44,10 @@ footer {
     .developer-credits {
         a {
             text-decoration: none;
-            color: #459EA3;
+            color: $nf-light;
 
             &:hover {
-                color:#A30B37;
+                color:$nf-accent;
             }
         }
 

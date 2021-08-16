@@ -27,12 +27,12 @@
 
         a {
             text-decoration: none;
-            color: #004964;
+            color: $nf-dark;
             padding: 0.5rem;
             position: relative;
 
             &:hover {
-                color: #459EA3;
+                color: $nf-blue;
             }
         }
           
@@ -43,7 +43,7 @@
             right: 0;
             width: 0;
             height: 2px;
-            background-color: #004964;
+            background-color: $nf-blue;
             transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         }
           
