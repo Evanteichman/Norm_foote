@@ -1,6 +1,8 @@
 nav.social-navigation {
+    opacity: 0;
     background-color: white;
     padding: 0.5rem;
+    transition: opacity 400ms ease-in;
 
     svg {
         fill: $nf-light;
@@ -11,13 +13,8 @@ nav.social-navigation {
             fill: $nf-accent;
         }
     }
+}
 
-    .fade-in {
-        opacity: 0;
-        transition: opacity 400ms ease-in;
-      }
-      
-    .fade-in.appear {
+.fade-in.appear {
         opacity: 1;
     }
-}
