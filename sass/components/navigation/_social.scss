@@ -1,20 +1,39 @@
+// social nav
 nav.social-navigation {
-    opacity: 0;
-    background-color: white;
-    padding: 0.5rem;
-    transition: opacity 400ms ease-in;
+  background: none;
+  position: fixed;
+  top: 80vh;
+  right: 10px;
 
-    svg {
-        fill: $nf-light;
-        z-index: 500;
-
-        &:hover,
-        &:focus {
-            fill: $nf-accent;
-        }
+  z-index: 100;
+  div {
+    ul {
+      padding: 0;
+      margin: 0;
+      li {
+        list-style: none;
+      }
     }
+  }
+}
+
+nav.social-navigation {
+  opacity: 0;
+  //   background-color: white;
+  padding: 0.5rem;
+  transition: opacity 400ms ease-in;
+
+  svg {
+    fill: $nf-blue;
+    z-index: 500;
+
+    &:hover,
+    &:focus {
+      fill: $nf-accent;
+    }
+  }
 }
 
 .fade-in.appear {
-        opacity: 1;
-    }
+  opacity: 1;
+}

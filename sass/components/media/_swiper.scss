@@ -1,16 +1,17 @@
 .home-slider {
   position: absolute;
-  top: 250px;
+  bottom: 150px;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 99;
 
   a.read-more {
     @include button;
   }
 
   .swiper-wrapper {
-    width: 20rem;
+    // width: 20rem;
+    display: flex;
   }
 
   .swiper-info {
@@ -18,19 +19,35 @@
     padding: 1rem;
     background-color: rgba($color: #000000, $alpha: 0.5);
     color: white;
+    max-width: 20rem;
+  }
+  .swiper-slide.swiper-slide-active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .swiper-button.swiper-button-prev,
+  .swiper-button.swiper-button-next {
+    display: none;
   }
 
   @media screen and (min-width: 500px) {
+    .swiper-button.swiper-button-prev,
+    .swiper-button.swiper-button-next {
+      display: flex;
+    }
     .swiper-info {
-      max-width: 30rem;
-      margin: 12rem 1rem 0 1rem;
+      // margin: 12rem 1rem 0 1rem;
+      margin: 0;
+      display: inline-block;
     }
 
     .swiper-button-prev:after,
     .swiper-container-rtl .swiper-button-next:after,
     .swiper-button-next:after,
     .swiper-container-rtl .swiper-button-prev:after {
-        margin-top: -8rem !important;
+      // margin-top: -8rem !important;
+      margin-top: 0rem !important;
     }
   }
 
@@ -39,22 +56,36 @@
   .swiper-container-rtl .swiper-button-next:after,
   .swiper-button-next:after,
   .swiper-container-rtl .swiper-button-prev:after {
-      background-color: white;
-      color: $nf-dark;
-      border-radius: 50%;
-      font-size: 1.5rem;
-      margin-top: 30rem;
+    background-color: white;
+    color: $nf-dark;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    margin-top: 30rem;
   }
 
   .swiper-button-prev:after,
   .swiper-container-rtl .swiper-button-next:after {
-      padding: 0.5rem 1.25rem 0.5rem 1rem;
-      margin-left: 2rem;
+    padding: 0.5rem 1.25rem 0.5rem 1rem;
+    margin-left: 2rem;
   }
 
   .swiper-button-next:after,
   .swiper-container-rtl .swiper-button-prev:after {
-      padding: 0.5rem 1rem 0.5rem 1.25rem;
-      margin-right: 2rem;
+    padding: 0.5rem 1rem 0.5rem 1.25rem;
+    margin-right: 2rem;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .home-slider {
+    .swiper-info {
+      max-width: 30rem;
+    }
+    .swiper-slide.swiper-slide-active {
+      display: flex;
+      justify-content: normal;
+      align-items: normal;
+      margin-left: 5rem;
+    }
   }
 }

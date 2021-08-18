@@ -1,5 +1,6 @@
 const swiper = new Swiper('.swiper-container', {
     loop: true,
+    speed: 700,
     // autoHeight: true,
     pagination: {
         el: '.swiper-pagination',
