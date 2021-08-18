@@ -1,76 +1,78 @@
 .post-type-archive-nf-foote-note {
-    
+  article {
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    margin: 3rem auto;
+    // cursor: pointer;
+    border-radius: 10px;
+    padding: 1rem 1rem 2.5rem;
+    box-shadow: 2px 2px 8px #888888;
+    text-decoration: none;
+
+    // &:hover {
+    //   box-shadow: 2px 2px 8px #5a5a5a;
+    //   transform: scale(1.01);
+    // }
+
+    img {
+      align-self: flex-start;
+      border-radius: inherit;
+      margin: 0 auto;
+    }
+
+    h2 {
+      margin-bottom: 0;
+
+      a {
+        color: black;
+        text-decoration: none;
+      }
+    }
+
+    p {
+      max-width: 30rem;
+      padding-bottom: 1em;
+      margin-bottom: none;
+    }
+
+    .read-more {
+      @include button;
+    }
+  }
+
+  @media screen and (min-width: 700px) {
     article {
-        display: flex;
-        flex-direction: column;
-        max-width: 90%;
-        margin: 3rem auto;
-        cursor: pointer;
-        border-radius: 10px;
-        padding: 1rem 1rem 2.5rem;
-        box-shadow: 2px 2px 8px #888888;
-        
-        &:hover {
-            box-shadow: 2px 2px 8px #5a5a5a;
-            transform: scale(1.01);
-        }
+      flex-direction: row;
+      max-width: $maxWidth;
+      margin: 1rem;
 
-        img {
-            align-self: flex-start;
-            border-radius: inherit;
-        }
+      img {
+        align-self: center;
+        margin: 0;
+        margin-top: 1.5em;
+      }
 
-        h2 {
-            margin-bottom: 0;
-            
-            a {
-                color: black;
-                text-decoration: none; 
-            }
-        }
-
-        p {
-            max-width: 30rem;
-            padding-bottom: 1em;
-            margin-bottom: none;
-        }
-
-        .read-more {
-            @include button;
-        }
-    } 
-
-    @media screen and (min-width: 700px) {
-        article {
-            flex-direction: row;
-            max-width: $maxWidth;
-            margin: 1rem;
-
-            img {
-                align-self: center;
-                margin-top: 1.5em;
-            }
-
-            .article-info {
-                padding-left: 1em;
-                margin-left: 1rem;
-                margin-bottom: 1rem;
-            }
-        }
+      .article-info {
+        padding-left: 1em;
+        margin-left: 1rem;
+        margin-bottom: 1rem;
+      }
     }
+  }
 
-    @media screen and (min-width: 1000px) {
-        article {
-            margin: 3em auto;
-            padding-bottom: 1rem;
+  @media screen and (min-width: 1000px) {
+    article {
+      margin: 3em auto;
+      padding-bottom: 1rem;
 
-            img {
-                margin-top: initial;
-            }
+      img {
+        margin-top: initial;
+      }
 
-            .article-info {
-                margin-bottom: 2rem;
-            }
-        }
+      .article-info {
+        margin-bottom: 2rem;
+      }
     }
+  }
 }

@@ -28,8 +28,9 @@ get_header();
 				$args = array(
 					'post_type' 		=> 'nf-concert',
 					'posts_per_page' 	=> -1,
-					'order_by'			=> 'title',
-					'order'				=> 'ASC'
+					'meta_key' 			=> 'concert_date',
+					'orderby' 			=> 'meta_value_num',
+					'order' 			=> 'ASC'
 				);
 					
 				$query = new WP_Query( $args );
@@ -43,29 +44,30 @@ get_header();
 							<div class="concert-row">
 								
 								<section class="concert-info"> 
-									<?php if ( get_field( 'date' ) ) : ?>
-										<p><?php the_field('date');?></p>
+									<?php if ( get_field( 'concert_date' ) ) : ?>
+										<p class="concert-date"><?php the_field('concert_date');?></p>
 									<?php endif; ?> 
 
-									<?php if ( get_field( 'time' ) ) : ?>
-										<p><?php the_field('time');?></p>
+									<?php if ( get_field( 'concert_time' ) ) : ?>
+										<p class="concert-time"><?php the_field('concert_time');?></p>
 									<?php endif; ?> 
 									
-									<?php if ( get_field( 'location' ) ) : ?>
-										<p><?php the_field('location');?></p>
+									<?php if ( get_field( 'concert_location' ) ) : ?>
+										<p class="concert-location"><?php the_field('concert_location');?></p>
 									<?php endif; ?> 
 								</section>
 								
 								<?php 
-								$link = get_field('link');
+								$link = get_field('concert_link');
 								if( $link ): ?>
 									<a class="button" href="<?php echo esc_url( $link ); ?>">Buy Ticket</a>
 								<?php endif; ?>
 								
 							</div>
 							<?php endif; ?>
-							<?php wp_reset_postdata(); ?> // Reset the post data to avoid database conflicts
+							
 						<?php endwhile; ?>
+						<?php wp_reset_postdata();  // Reset the post data to avoid database conflicts ?>
 					<?php endif; ?>
 					<?php
 

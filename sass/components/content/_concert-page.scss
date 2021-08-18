@@ -1,34 +1,46 @@
 .post-type-archive-nf-concert {
+  .concert-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: $maxWidth;
+    margin: 0 auto;
+    padding: 1rem;
+    border-bottom: 1.5px solid rgba(178, 188, 199, 0.5);
+  }
+  .button {
+    @include button;
+    text-align: center;
+  }
 
+  .concert-info {
+    display: flex;
+    flex-direction: column;
+    width: 10rem;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (min-width: 750px) {
     .concert-row {
-        display: flex;
+      .concert-info {
+        flex-direction: row;
         justify-content: space-between;
-        align-items: center;
-        width: 90%;
-        max-width: $maxWidth;
-        margin: 0 auto;
-        padding: 1rem;
-        border-bottom: 1.5px solid rgba(178, 188, 199, .5);
-    }
+        width: 30rem;
 
-    .concert-info {
-        display: flex;
-        flex-direction: column;
-
-        p {
-            margin-bottom: 0;
+        .concert-date {
+          width: 10rem;
         }
-    }
-
-    @media screen and (min-width: 750px) {
-        .concert-info {
-            flex-direction: row;
-            justify-content: space-between;
-            width: 20rem;
+        .concert-time {
+          width: 7rem;
         }
+        .concert-location {
+          width: 25rem;
+        }
+      }
     }
-    
-    .button {
-        @include button;
-    }
+  }
 }
