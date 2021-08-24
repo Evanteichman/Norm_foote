@@ -94,7 +94,6 @@ get_header(); ?>
 							if( function_exists('get_field')):?>
 
 								<div class="single-player">
-									<!-- do I need to wrap the title in a conditonal -->
 									<?php if ( get_field( 'music_player' ) ) : ?>
 										<?php the_field('music_player');?>
 									<?php endif; ?> 
@@ -164,10 +163,9 @@ get_header(); ?>
 
 			// output the foote notes
 			$args = array(
-				'post_type' 		=> 'nf-foote-note',
-				'posts_per_page' 	=> -1,
-				'order_by'			=> 'title',
-				'order'				=> 'ASC'
+				'post_type' 		=> 'nf-testimonial',
+				'posts_per_page' 	=> 3,
+				'orderby'			=> 'rand',
 			);
 			 
 			$query = new WP_Query( $args );
@@ -175,9 +173,9 @@ get_header(); ?>
 			if ( $query -> have_posts() ):
 				?>
 
-				<h2>Foote Notes</h2>
+				<h2>Testimonials</h2>
 					
-				<div class="foote-note-container">
+				<div class="testimonial-container">
 					<?php
 					while ( $query -> have_posts() ) :
 						$query -> the_post();
@@ -186,19 +184,19 @@ get_header(); ?>
 
 						<!-- do I need to wrap the title in a conditonal -->
 
-						<div class="foote-note">
-
-							<?php if ( get_the_title() ) : ?>
-								<h3><?php the_title(); ?></h3>
-							<?php endif; ?> 
+						<div class="testimonial">
 							
-							<?php if ( get_field( 'foote_note_text' ) ) : ?>
-								<?php the_field( 'foote_note_text' ); ?>
+							<?php if ( get_field( 'testimonial_text' ) ) : ?>
+								<?php the_field( 'testimonial_text' ); ?>
 							<?php endif; ?> 
 
-							<?php endif; ?>
+							<?php if ( get_field( 'testimonial_author' ) ) : ?>
+								<p><?php the_field( 'testimonial_author' ); ?></p>
+							<?php endif; ?> 
 
 						</div>
+
+						<?php endif; ?>
 						
 					<?php
 						endwhile;
