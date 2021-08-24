@@ -22,48 +22,50 @@ get_header();
 			the_post(); ?>
 
 			<h1>Get in Touch!</h1>
+
+			<section class="people-links">
+			<?php
+			// output the contact info
+				$args = array(
+					'post_type' 		=> 'nf-contact',
+					'posts_per_page' 	=> -1,
+					'order_by'			=> 'title',
+					'order'				=> 'ASC'
+				);
+				
+				$query = new WP_Query( $args );
+				
+				if ( $query -> have_posts() ):
+					?>
+						
+						<?php
+							while ( $query -> have_posts() ) :
+								$query -> the_post();
+
+								if( function_exists('get_field')):?>
+									<div class="person">
+										<?php if ( get_field( 'contact_name' ) ) : ?>
+											<h3><?php the_field('contact_name');?></h3>
+										<?php endif; ?> 
+
+										<?php if ( get_field( 'contact_email' ) ) : ?>
+											<a href = "mailto:<?php the_field('contact_email');?>"><?php the_field('contact_email');?></a>
+										<?php endif; ?> 
+
+										<?php if ( get_field( 'contact_phone_number' ) ) : ?>
+											<p><?php the_field('contact_phone_number');?></p>
+										<?php endif; ?> 
+
+									</div>	
+								<?php endif;
 			
-		<?php
-		// output the contact info
-			$args = array(
-				'post_type' 		=> 'nf-contact',
-				'posts_per_page' 	=> -1,
-				'order_by'			=> 'title',
-				'order'				=> 'ASC'
-			);
-			 
-			$query = new WP_Query( $args );
-			 
-			if ( $query -> have_posts() ):
-				?>
-					
-					<?php
-						while ( $query -> have_posts() ) :
-							$query -> the_post();
+							endwhile;
+						wp_reset_postdata(); // Reset the post data to avoid database conflicts
+				endif; 
 
-							if( function_exists('get_field')):?>
-								<div>
-									<?php if ( get_field( 'contact_name' ) ) : ?>
-										<h3><?php the_field('contact_name');?></h3>
-									<?php endif; ?> 
-
-									<?php if ( get_field( 'contact_email' ) ) : ?>
-										<a href = "mailto:<?php the_field('contact_email');?>"><?php the_field('contact_email');?></a>
-									<?php endif; ?> 
-
-									<?php if ( get_field( 'contact_phone_number' ) ) : ?>
-										<p><?php the_field('contact_phone_number');?></p>
-									<?php endif; ?> 
-
-								</div>	
-							<?php endif;
-		
-						endwhile;
-					wp_reset_postdata(); // Reset the post data to avoid database conflicts
-			endif; 
-
-		endwhile; // End of the loop.
-		?>
+			endwhile; // End of the loop.
+			?>
+			</section>
 
 	</main><!-- #main -->
 
