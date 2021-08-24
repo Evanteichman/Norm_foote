@@ -10,10 +10,12 @@ footer {
         text-decoration: underline;
     }
 
-    .footer-contact-links {
+    .footer-contact-cta {
+        padding: 2rem;
 
-        a {
-            color: $nf-blue; 
+        a {    
+            font-size: 1.25rem;
+            @include button;
         }
     }
 
@@ -30,12 +32,12 @@ footer {
     
     .footer-social-links {
         svg {
-            fill: $nf-accent;
+            fill: $nf-blue;
             width: 32px;
             height: 32px;
 
             &:hover {
-                fill: $nf-light;
+                fill: $nf-accent;
             }
         }
     }

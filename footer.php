@@ -13,47 +13,9 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-		<h2>Get in Touch!</h2>
-		<section class="footer-contact-links">
-			<?php
 
-		// output the contact info
-			$args = array(
-				'post_type' 		=> 'nf-contact',
-				'posts_per_page' 	=> -1,
-				'order_by'			=> 'title',
-				'order'				=> 'ASC'
-			);
-			 
-			$query = new WP_Query( $args );
-			 
-			if ( $query -> have_posts() ):
-				?>
-					
-					<?php
-						while ( $query -> have_posts() ) :
-							$query -> the_post();
-
-							if( function_exists('get_field')):?>
-								<div>
-									<?php if ( get_field( 'name' ) ) : ?>
-										<h3><?php the_field('name');?></h3>
-									<?php endif; ?> 
-
-									<?php if ( get_field( 'email' ) ) : ?>
-										<a href = "mailto:<?php the_field('email');?>"><?php the_field('email');?></a>
-									<?php endif; ?> 
-
-									<?php if ( get_field( 'phone_number' ) ) : ?>
-										<p><?php the_field('phone_number');?></p>
-									<?php endif; ?> 
-
-								</div>	
-							<?php endif;
-		
-						endwhile;
-					wp_reset_postdata(); // Reset the post data to avoid database conflicts
-			endif; ?>
+			<section class="footer-contact-cta">
+				<a class="button" href="<?php echo esc_url( get_permalink(211) ); ?>">Contact</a>
 			</section>
 
 			<section class="footer-social-links">
