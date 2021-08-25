@@ -123,11 +123,11 @@ get_header();
  
 					<div class="written-content">
 						<?php if ( get_field( 'outreach_section_4_title' ) ) : ?>
-							<h2> <?php the_field( 'outreach_section_3_title' ); ?> </h2>
+							<h2> <?php the_field( 'outreach_section_4_title' ); ?> </h2>
 						<?php endif; ?>
 				
 						<?php if ( get_field( 'outreach_section_4_information' ) ) : ?>
-							<p> <?php the_field( 'outreach_section_2_information' ); ?> </p>
+							<p> <?php the_field( 'outreach_section_4_information' ); ?> </p>
 						<?php endif; ?> 
 					</div>
 						
