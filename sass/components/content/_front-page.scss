@@ -131,6 +131,63 @@ figure.wp-block-image.size-full.is-resized {
   }
 }
 
+// social section
+
+.social-section-container {
+  padding: 1rem;
+  h3 {
+    text-align: center;
+  }
+
+  .social-text-container {
+  }
+
+  .music-links-container {
+    display: flex;
+    justify-content: center;
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      li {
+        padding: 0.3rem;
+        a {
+          svg {
+            fill: $nf-blue;
+            width: 40px;
+            height: 40px;
+
+            &:hover {
+              fill: $nf-accent;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 45em) {
+  .social-section {
+    margin: 0 auto;
+    max-width: $maxWidth;
+    display: flex;
+    .social-text-container {
+      max-width: 50%;
+      display: flex;
+      align-items: center;
+    }
+
+    .music-links-container {
+      max-width: 50%;
+      margin: 0 auto;
+      ul {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
 //welcome
 .welcome {
   position: absolute;

@@ -69,15 +69,61 @@ get_header(); ?>
 			<?php wp_reset_postdata(); endif;?>
 			<h1 class="welcome">Welcome</h1>
 			<?php
+			
 
-			//social menu
-			require get_template_directory() . '/template-parts/content-social-nav.php';
+			
+			$args = array(
+				'post_type' 		=> 'nf-social-text',
+				'posts_per_page' 	=> 1,
+				'order_by'			=> 'title',
+				'order'				=> 'ASC'
+				
+			);
+			
+			$query = new WP_Query( $args );
+			
+			
+			if ($query->have_posts()) : ?>
+				<section class="social-section-container">
+				
 
+					<?php 
+
+					while ($query->have_posts()) : 
+								$query->the_post();
+							if( function_exists('get_field')):?>
+							<h3><?php the_title(); ?></h3>
+							<section class="social-section">
+							
+								<div class="social-text-container">
+									
+
+									<?php if ( get_field( 'social_text' ) ) : ?>
+										<?php the_field('social_text');?>
+									<?php endif; ?>
+
+								</div>
+
+								<div class="music-links-container">
+									<?php
+									//social menu
+									require get_template_directory() . '/template-parts/content-social-nav.php';?>
+
+								</div>
+							</section>
+								
+			
+							<?php endif; ?> 
+					<?php endwhile; ?>
+					
+				</section>
+			
+			<?php wp_reset_postdata(); endif;
 
 			// output the bio
 			$args = array(
 				'post_type' 		=> 'nf-bio',
-				'posts_per_page' 	=> -1,
+				'posts_per_page' 	=> 1,
 				'order_by'			=> 'title',
 				'order'				=> 'ASC'
 			);

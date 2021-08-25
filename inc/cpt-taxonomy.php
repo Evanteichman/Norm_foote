@@ -151,55 +151,6 @@ function nf_register_custom_post_types() {
 
     register_post_type( 'nf-foote-note', $args );
 
-    // Register Hero Slider CPT
-    $labels = array(
-        'name'                  => _x( 'Hero Slider', 'post type general name' ),
-        'singular_name'         => _x( 'Slide', 'post type singular name'),
-        'menu_name'             => _x( 'Hero Slider', 'admin menu' ),
-        'name_admin_bar'        => _x( 'Slide', 'add new on admin bar' ),
-        'add_new'               => _x( 'Add New', 'slide' ),
-        'add_new_item'          => __( 'Add New slide' ),
-        'new_item'              => __( 'New slide' ),
-        'edit_item'             => __( 'Edit Slide' ),
-        'view_item'             => __( 'View Slide' ),
-        'all_items'             => __( 'All Slides' ),
-        'search_items'          => __( 'Search Slides' ),
-        'parent_item_colon'     => __( 'Parent Slides:' ),
-        'not_found'             => __( 'No slide found.' ),
-        'not_found_in_trash'    => __( 'No slide found in Trash.' ),
-        'archives'              => __( 'Hero Slider Archive'),
-        'insert_into_item'      => __( 'Insert into Hero Slider'),
-        'uploaded_to_this_item' => __( 'Uploaded to this Hero Slider'),
-        'filter_item_list'      => __( 'Filter Hero Slider list'),
-        'items_list_navigation' => __( 'Hero Slider list navigation'),
-        'items_list'            => __( 'Hero Slider list'),
-        'featured_image'        => __( 'Slide featured image'),
-        'set_featured_image'    => __( 'Set slide featured image'),
-        'remove_featured_image' => __( 'Remove slide featured image'),
-        'use_featured_image'    => __( 'Use as featured image'),
-    );
-
-    $args = array(
-        'labels'             => $labels,
-        'public'             => true,
-        'publicly_queryable' => true,
-        'show_ui'            => true,
-        'show_in_menu'       => true,
-        'show_in_nav_menus'  => true,
-        'show_in_admin_bar'  => true,
-        'show_in_rest'       => true,
-        'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'hero-slider' ),
-        'capability_type'    => 'post',
-        'has_archive'        => true,
-        'hierarchical'       => false,
-        'menu_position'      => 5,
-        'menu_icon'          => 'dashicons-format-gallery',
-        'supports'           => array( 'title', 'thumbnail' ),
-    );
-
-    register_post_type( 'nf-hero-slider', $args );
-
 
     // Register Youtube Video CPT
     $labels = array(
@@ -300,31 +251,31 @@ function nf_register_custom_post_types() {
 
     register_post_type( 'nf-bio', $args );
 
-    // Register Spotify Embed CPT
+    // Register Social Text CPT
     $labels = array(
-        'name'                  => _x( 'Music Player', 'post type general name' ),
-        'singular_name'         => _x( 'Music Player', 'post type singular name'),
-        'menu_name'             => _x( 'Music Player', 'admin menu' ),
-        'name_admin_bar'        => _x( 'Music Player', 'add new on admin bar' ),
-        'add_new'               => _x( 'Add New', 'Music Player' ),
-        'add_new_item'          => __( 'Add New Music Player' ),
-        'new_item'              => __( 'New Music Player' ),
-        'edit_item'             => __( 'Edit Music Player' ),
-        'view_item'             => __( 'View Music Player' ),
-        'all_items'             => __( 'All Music Players' ),
-        'search_items'          => __( 'Search Music Players' ),
-        'parent_item_colon'     => __( 'Parent Music Player:' ),
-        'not_found'             => __( 'No music player found.' ),
-        'not_found_in_trash'    => __( 'No music player found in Trash.' ),
-        'archives'              => __( 'Music Player Archive'),
-        'insert_into_item'      => __( 'Insert into Music Player'),
-        'uploaded_to_this_item' => __( 'Uploaded to this Music Player'),
-        'filter_item_list'      => __( 'Filter Music Player list'),
-        'items_list_navigation' => __( 'Music Player list navigation'),
-        'items_list'            => __( 'Music Player list'),
-        'featured_image'        => __( 'Music Player featured image'),
-        'set_featured_image'    => __( 'Set Music Player featured image'),
-        'remove_featured_image' => __( 'Remove Music Player featured image'),
+        'name'                  => _x( 'Social Text', 'post type general name' ),
+        'singular_name'         => _x( 'Social Text', 'post type singular name'),
+        'menu_name'             => _x( 'Social Text', 'admin menu' ),
+        'name_admin_bar'        => _x( 'Social Text', 'add new on admin bar' ),
+        'add_new'               => _x( 'Add New', 'Social Text' ),
+        'add_new_item'          => __( 'Add New Social Text' ),
+        'new_item'              => __( 'New Social Text' ),
+        'edit_item'             => __( 'Edit Social Text' ),
+        'view_item'             => __( 'View Social Text' ),
+        'all_items'             => __( 'All Social Text' ),
+        'search_items'          => __( 'Search Social Text' ),
+        'parent_item_colon'     => __( 'Parent Social Text:' ),
+        'not_found'             => __( 'No Social Text found.' ),
+        'not_found_in_trash'    => __( 'No Social Text found in Trash.' ),
+        'archives'              => __( 'Social Text Archive'),
+        'insert_into_item'      => __( 'Insert into Social Text'),
+        'uploaded_to_this_item' => __( 'Uploaded to this Social Text'),
+        'filter_item_list'      => __( 'Filter Social Text list'),
+        'items_list_navigation' => __( 'Social Text list navigation'),
+        'items_list'            => __( 'Social Text list'),
+        'featured_image'        => __( 'Social Text featured image'),
+        'set_featured_image'    => __( 'Set Social Text featured image'),
+        'remove_featured_image' => __( 'Remove Social Text featured image'),
         'use_featured_image'    => __( 'Use as featured image'),
     );
 
@@ -338,7 +289,7 @@ function nf_register_custom_post_types() {
         'show_in_admin_bar'  => true,
         'show_in_rest'       => true,
         'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'music-player' ),
+        'rewrite'            => array( 'slug' => 'social-text' ),
         'capability_type'    => 'post',
         'has_archive'        => true,
         'hierarchical'       => false,
@@ -347,7 +298,7 @@ function nf_register_custom_post_types() {
         'supports'           => array( 'title'),
     );
 
-    register_post_type( 'nf-music-player', $args );
+    register_post_type( 'nf-social-text', $args );
 
 
     // Register Contact CPT
