@@ -62,31 +62,6 @@
   }
 }
 
-// music player section
-.music-player-container {
-  padding: 1rem;
-}
-
-.single-player {
-  max-width: 25rem;
-  margin: 0 auto;
-  padding: 1rem;
-  iframe {
-    height: 28rem;
-  }
-}
-
-@media (min-width: 50em) {
-  .music-player-container {
-    display: flex;
-    max-width: $maxWidth;
-    margin: 0 auto;
-  }
-  .single-player {
-    width: 25rem;
-  }
-}
-
 //bio section
 .bio-container {
   padding: 1rem;
@@ -154,4 +129,12 @@ figure.wp-block-image.size-full.is-resized {
       padding-top: 5rem;
     }
   }
+}
+
+//welcome
+.welcome {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

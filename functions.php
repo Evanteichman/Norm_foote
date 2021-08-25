@@ -278,7 +278,7 @@ add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
 //trims text from ACF field in hero slide to create an excerpt, must call the_excerpt where you want to output this
 function acf_excerpt_hero($excerpt) {
 
-	$my_acf_field = wp_trim_words(get_field('text'), 20);
+	$my_acf_field = wp_trim_words(get_field('foote_note_text'), 20);
 
 return $my_acf_field . '' . $excerpt;
 }
@@ -287,7 +287,7 @@ add_filter('the_excerpt', 'acf_excerpt_hero');
 // //For Foote Notes Archive
 function acf_excerpt_foote_note($excerpt) {
 
-	$my_acf_field = wp_trim_words(get_field('text'), 30);
+	$my_acf_field = wp_trim_words(get_field('foote_note_text'), 30);
 
 return $my_acf_field;
 }

@@ -15,6 +15,7 @@
 get_header(); ?>
 
 	<main id="primary" class="site-main">
+		
 
 		<?php
 		while ( have_posts() ) :
@@ -34,6 +35,7 @@ get_header(); ?>
 			);
 			
 			$query = new WP_Query( $args );
+			
 			
 			if ($query->have_posts()) : ?>
 				<section class="home-slider">
@@ -64,52 +66,13 @@ get_header(); ?>
 					<div class="swiper-button swiper-button-next"></div>
 				</section>
 			
-			<?php wp_reset_postdata(); endif;
+			<?php wp_reset_postdata(); endif;?>
+			<h1 class="welcome">Welcome</h1>
+			<?php
 
 			//social menu
 			require get_template_directory() . '/template-parts/content-social-nav.php';
 
-			
-			// output the music payers
-			$args = array(
-				'post_type' 		=> 'nf-music-player',
-				'posts_per_page' 	=> -1,
-				'order_by'			=> 'title',
-				'order'				=> 'ASC'
-			);
-			
-			$query = new WP_Query( $args );
-			
-			if ( $query -> have_posts() ):
-				?>
-
-				<section class="music-player-section">
-
-					<div class="music-player-container">
-						
-						<?php
-						while ( $query -> have_posts() ) :
-							$query -> the_post();
-
-							if( function_exists('get_field')):?>
-
-								<div class="single-player">
-									<?php if ( get_field( 'music_player' ) ) : ?>
-										<?php the_field('music_player');?>
-									<?php endif; ?> 
-
-								</div>
-								
-						<?php
-						endif;
-
-					endwhile;
-						wp_reset_postdata(); // Reset the post data to avoid database conflicts
-						?>
-
-						</div>
-				</section>
-			<?php endif;
 
 			// output the bio
 			$args = array(
