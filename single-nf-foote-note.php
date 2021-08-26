@@ -25,8 +25,8 @@ get_header();
 						the_post_thumbnail('single-foote-note-image');	
 					endif; ?>
 							
-					<?php if ( get_field( 'text' ) ) : ?>
-						<p><?php the_field('text'); ?></p>	
+					<?php if ( get_field( 'foote_note_text' ) ) : ?>
+						<p><?php the_field('foote_note_text'); ?></p>	
 					<?php endif; ?>
 							
 				<?php endif; ?>
