@@ -53,7 +53,7 @@ get_header(); ?>
 										<div class="swiper-slide">
 											<div class="swiper-info">
 												<h3> <?php the_title(); ?></h3>
-												<p class="slide-text"><?php the_excerpt(); ?></p>
+												<!-- <p class="slide-text"><?php //the_excerpt(); ?></p> -->
 												<a class="read-more" href="<?php the_permalink(); ?>">Read More</a>	
 											</div>
 										</div>

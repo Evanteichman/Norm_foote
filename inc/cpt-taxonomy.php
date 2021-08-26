@@ -301,6 +301,57 @@ function nf_register_custom_post_types() {
     register_post_type( 'nf-social-text', $args );
 
 
+    // Register Voice Over Section CPT
+    //currrently making this with the intention that it will be used once for the voice over section, this could easily be adapted in combination with a custom taxonomy to out put other sections on the home page or I guess anywhere
+    $labels = array(
+        'name'                  => _x( 'Voice Over Section', 'post type general name' ),
+        'singular_name'         => _x( 'Voice Over Section', 'post type singular name'),
+        'menu_name'             => _x( 'Voice Over Section', 'admin menu' ),
+        'name_admin_bar'        => _x( 'Voice Over Section', 'add new on admin bar' ),
+        'add_new'               => _x( 'Add New', 'Voice Over Section' ),
+        'add_new_item'          => __( 'Add New Voice Over Section' ),
+        'new_item'              => __( 'New Voice Over Section' ),
+        'edit_item'             => __( 'Edit Voice Over Section' ),
+        'view_item'             => __( 'View Voice Over Section' ),
+        'all_items'             => __( 'All Voice Over Section' ),
+        'search_items'          => __( 'Search Voice Over Section' ),
+        'parent_item_colon'     => __( 'Parent Voice Over Section:' ),
+        'not_found'             => __( 'No Voice Over Section found.' ),
+        'not_found_in_trash'    => __( 'No Voice Over Section found in Trash.' ),
+        'archives'              => __( 'Voice Over Section Archive'),
+        'insert_into_item'      => __( 'Insert into Voice Over Section'),
+        'uploaded_to_this_item' => __( 'Uploaded to this Voice Over Section'),
+        'filter_item_list'      => __( 'Filter Voice Over Section list'),
+        'items_list_navigation' => __( 'Voice Over Section list navigation'),
+        'items_list'            => __( 'Voice Over Section list'),
+        'featured_image'        => __( 'Voice Over Section featured image'),
+        'set_featured_image'    => __( 'Set Voice Over Section featured image'),
+        'remove_featured_image' => __( 'Remove Voice Over Section featured image'),
+        'use_featured_image'    => __( 'Use as featured image'),
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'show_in_nav_menus'  => true,
+        'show_in_admin_bar'  => true,
+        'show_in_rest'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'voice-over-section' ),
+        'capability_type'    => 'post',
+        'has_archive'        => false,
+        'hierarchical'       => false,
+        'menu_position'      => 5,
+        'menu_icon'          => 'dashicons-schedule',
+        'supports'           => array( 'title'),
+    );
+
+    register_post_type( 'nf-voice-over-section', $args );
+
+
     // Register Contact CPT
     $labels = array(
         'name'                  => _x( 'Contact Info', 'post type general name' ),

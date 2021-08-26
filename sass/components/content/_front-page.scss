@@ -23,10 +23,6 @@
 
 //youtube video section
 
-.youtube-container {
-  //   display: flex;
-}
-
 .video-container {
   margin: 0 auto;
   padding: 1rem;
@@ -74,7 +70,7 @@
   img {
     border-radius: 50%;
     padding: 1rem;
-    // max-width: 20rem;
+    max-width: 22rem;
   }
 
   p.quote {
@@ -139,10 +135,8 @@ figure.wp-block-image.size-full.is-resized {
     text-align: center;
   }
 
-  .social-text-container {
-  }
-
   .music-links-container {
+    padding-top: 1rem;
     display: flex;
     justify-content: center;
     ul {
@@ -170,20 +164,19 @@ figure.wp-block-image.size-full.is-resized {
 @media (min-width: 45em) {
   .social-section {
     margin: 0 auto;
-    max-width: $maxWidth;
-    display: flex;
-    .social-text-container {
-      max-width: 50%;
-      display: flex;
-      align-items: center;
-    }
-
+    max-width: 37rem;
     .music-links-container {
       max-width: 50%;
       margin: 0 auto;
       ul {
-        display: flex;
-        flex-direction: column;
+        li {
+          a {
+            svg {
+              width: 60px;
+              height: 60px;
+            }
+          }
+        }
       }
     }
   }
