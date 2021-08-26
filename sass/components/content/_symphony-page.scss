@@ -36,10 +36,10 @@
         }
     }
 
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 37.5em) {
 
         .hero-img {
-            height: 15rem;
+            height: 15em;
         }
 
         .photo-gallery {
@@ -52,18 +52,18 @@
             display: flex;
             flex-direction: column;
             margin: 0 auto;
-            max-width: 55rem;
+            max-width: 55em;
 
             p {
-                padding: 0 2rem 1rem;
+                padding: 0 2em 1em;
             }
         }
     }
 
-    @media screen and (min-width: 800px) {
+    @media screen and (min-width: 50em) {
 
         .hero-img {
-            margin-bottom: 3rem;
+            margin-bottom: 3em;
         }
 
         .photo-gallery {
