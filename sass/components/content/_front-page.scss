@@ -66,31 +66,6 @@
   }
 }
 
-// music player section
-.music-player-container {
-  padding: 1rem;
-}
-
-.single-player {
-  max-width: 25rem;
-  margin: 0 auto;
-  padding: 1rem;
-  iframe {
-    height: 28rem;
-  }
-}
-
-@media (min-width: 50em) {
-  .music-player-container {
-    display: flex;
-    max-width: $maxWidth;
-    margin: 0 auto;
-  }
-  .single-player {
-    width: 25rem;
-  }
-}
-
 //bio section
 .bio-container {
   padding: 1rem;
@@ -103,7 +78,7 @@
   img {
     border-radius: 50%;
     padding: 1rem;
-    // max-width: 20rem;
+    max-width: 22rem;
   }
 
   p.quote {
@@ -158,4 +133,68 @@ figure.wp-block-image.size-full.is-resized {
       padding-top: 5rem;
     }
   }
+}
+
+// social section
+
+.social-section-container {
+  padding: 1rem;
+  h3 {
+    text-align: center;
+  }
+
+  .music-links-container {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: center;
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      li {
+        padding: 0.3rem;
+        a {
+          svg {
+            fill: $nf-blue;
+            width: 40px;
+            height: 40px;
+
+            &:hover {
+              fill: $nf-accent;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 45em) {
+  .social-section {
+    margin: 0 auto;
+    max-width: 37rem;
+    .music-links-container {
+      max-width: 50%;
+      margin: 0 auto;
+      ul {
+        li {
+          a {
+            svg {
+              width: 60px;
+              height: 60px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+//welcome
+.welcome {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 4rem;
 }
