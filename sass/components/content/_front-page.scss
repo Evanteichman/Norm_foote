@@ -1,5 +1,4 @@
-//testimonial Section
-
+//Testimonial Section
 .testimonial-container {
   margin: 0 2rem;
 }
@@ -16,21 +15,13 @@
     margin: 0 auto;
     max-width: $maxWidth;
   }
+  
   .testimonial {
-    width: 20rem;
+    width: 20em;
   }
 }
 
-//youtube video section
-
-// .disney-title {
-//   text-align: center;
-// }
-
-.youtube-container {
-  //   display: flex;
-}
-
+//YouTube Video Section
 .video-container {
   margin: 0 auto;
   padding: 1rem;
@@ -61,12 +52,13 @@
     max-width: $maxWidth;
     margin: 0 auto;
   }
+
   .video-container {
-    width: 30rem;
+    width: 30em;
   }
 }
 
-//bio section
+//Bio Section
 .bio-container {
   padding: 1rem;
   display: grid;
@@ -117,7 +109,7 @@
   }
 }
 
-//hero image
+//Hero Image
 figure.wp-block-image.size-full.is-resized {
   img {
     width: 100%;
@@ -130,13 +122,12 @@ figure.wp-block-image.size-full.is-resized {
 @media (min-width: 50em) {
   figure.wp-block-image.size-full.is-resized {
     img {
-      padding-top: 5rem;
+      padding-top: 5em;
     }
   }
 }
 
-// social section
-
+// Social Section
 .social-section-container {
   padding: 1rem;
   h3 {
@@ -147,14 +138,18 @@ figure.wp-block-image.size-full.is-resized {
     padding-top: 1rem;
     display: flex;
     justify-content: center;
+
     ul {
       list-style: none;
       padding: 0;
       margin: 0;
       display: flex;
+
       li {
         padding: 0.3rem;
+
         a {
+
           svg {
             fill: $nf-blue;
             width: 40px;
@@ -169,16 +164,22 @@ figure.wp-block-image.size-full.is-resized {
     }
   }
 }
+
 @media (min-width: 45em) {
   .social-section {
     margin: 0 auto;
-    max-width: 37rem;
+    max-width: 37em;
+
     .music-links-container {
       max-width: 50%;
       margin: 0 auto;
+
       ul {
+
         li {
+
           a {
+
             svg {
               width: 60px;
               height: 60px;
@@ -189,7 +190,8 @@ figure.wp-block-image.size-full.is-resized {
     }
   }
 }
-//welcome
+
+//Welcome
 .welcome {
   position: absolute;
   top: 15%;

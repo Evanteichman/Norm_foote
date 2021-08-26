@@ -57,19 +57,19 @@
     }
   }
 
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 62.5em) {
     article {
       max-width: $maxWidth;
       margin: 0 auto;
       flex-direction: row;
 
       img {
-        padding-right: 1rem;
+        padding-right: 1em;
         align-content: center;
       }
 
       p {
-        padding-left: 1rem;
+        padding-left: 1em;
       }
     }
   }

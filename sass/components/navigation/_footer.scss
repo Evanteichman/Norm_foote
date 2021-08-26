@@ -19,13 +19,13 @@ footer {
         }
     }
 
-    @media screen and (min-width: 550px) {
+    @media screen and (min-width: 34.375em) {
         .footer-contact-links {
             display: flex;
             justify-content: center;
 
             div {
-                padding: 1rem;
+                padding: 1em;
             }
         }
     }

@@ -4,6 +4,13 @@
         padding: 1rem;
         margin: 0 auto;
         padding: 1rem;
+
+        section {
+
+            img {
+                border-radius: 10px;
+            }
+        }
     }
 
     .intro-message {
@@ -20,7 +27,7 @@
         }
     }
 
-    @media screen and (min-width: 750px) {
+    @media screen and (min-width: 46.875em) {
         .section {
             display: flex;
             max-width: 100%;
@@ -28,11 +35,11 @@
             img {
                 max-width: 25rem;
                 align-self: center;
-                padding: 1rem;
+                padding: 1em;
             }
 
             p {
-                padding-right: 1rem;
+                padding-right: 1em;
             }
         }
 

@@ -9,6 +9,7 @@
     padding: 1rem;
     border-bottom: 1.5px solid rgba(178, 188, 199, 0.5);
   }
+
   .button {
     @include button;
     text-align: center;
@@ -24,21 +25,24 @@
     }
   }
 
-  @media (min-width: 750px) {
+  @media (min-width: 46.875em) {
     .concert-row {
+
       .concert-info {
         flex-direction: row;
         justify-content: space-between;
-        width: 30rem;
+        width: 30em;
 
         .concert-date {
-          width: 10rem;
+          width: 10em;
         }
+
         .concert-time {
-          width: 7rem;
+          width: 7em;
         }
+        
         .concert-location {
-          width: 25rem;
+          width: 25em;
         }
       }
     }
