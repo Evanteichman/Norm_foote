@@ -219,6 +219,9 @@ get_header(); ?>
 			 
 			if ( $query -> have_posts() ):
 				?>	
+
+					<h2 class="disney-title">Disney Records</h2>
+
 					<div class="youtube-container">
 
 					<?php
