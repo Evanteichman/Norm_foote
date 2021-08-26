@@ -45,7 +45,7 @@ get_header();
 					<div class="article-info">
 						<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2> 
 								
-						<?php if ( get_field( 'text' ) ) : ?>
+						<?php if ( get_field( 'foote_note_text' ) ) : ?>
 							<p><?php the_excerpt();?></p>	
 							<a class="read-more" href="<?php the_permalink(); ?>">Read More</a>
 						<?php endif; ?>

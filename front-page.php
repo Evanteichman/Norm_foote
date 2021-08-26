@@ -15,6 +15,7 @@
 get_header(); ?>
 
 	<main id="primary" class="site-main">
+		
 
 		<?php
 		while ( have_posts() ) :
@@ -35,6 +36,7 @@ get_header(); ?>
 			
 			$query = new WP_Query( $args );
 			
+			
 			if ($query->have_posts()) : ?>
 				<section class="home-slider">
 					
@@ -51,7 +53,7 @@ get_header(); ?>
 										<div class="swiper-slide">
 											<div class="swiper-info">
 												<h3> <?php the_title(); ?></h3>
-												<p class="slide-text"><?php the_excerpt(); ?></p>
+												<!-- <p class="slide-text"><?php //the_excerpt(); ?></p> -->
 												<a class="read-more" href="<?php the_permalink(); ?>">Read More</a>	
 											</div>
 										</div>
@@ -64,57 +66,64 @@ get_header(); ?>
 					<div class="swiper-button swiper-button-next"></div>
 				</section>
 			
-			<?php wp_reset_postdata(); endif;
-
-			//social menu
-			require get_template_directory() . '/template-parts/content-social-nav.php';
+			<?php wp_reset_postdata(); endif;?>
+			<h1 class="welcome">Welcome</h1>
+			<?php
+			
 
 			
-			// output the music payers
 			$args = array(
-				'post_type' 		=> 'nf-music-player',
-				'posts_per_page' 	=> -1,
+				'post_type' 		=> 'nf-social-text',
+				'posts_per_page' 	=> 1,
 				'order_by'			=> 'title',
 				'order'				=> 'ASC'
+				
 			);
 			
 			$query = new WP_Query( $args );
 			
-			if ( $query -> have_posts() ):
-				?>
+			
+			if ($query->have_posts()) : ?>
+				<section class="social-section-container">
+				
 
-				<section class="music-player-section">
+					<?php 
 
-					<div class="music-player-container">
-						
-						<?php
-						while ( $query -> have_posts() ) :
-							$query -> the_post();
-
+					while ($query->have_posts()) : 
+								$query->the_post();
 							if( function_exists('get_field')):?>
+							<h3><?php the_title(); ?></h3>
+							<section class="social-section">
+							
+								<div class="social-text-container">
+									
 
-								<div class="single-player">
-									<?php if ( get_field( 'music_player' ) ) : ?>
-										<?php the_field('music_player');?>
-									<?php endif; ?> 
+									<?php if ( get_field( 'social_text' ) ) : ?>
+										<?php the_field('social_text');?>
+									<?php endif; ?>
 
 								</div>
+
+								<div class="music-links-container">
+									<?php
+									//social menu
+									require get_template_directory() . '/template-parts/content-social-nav.php';?>
+
+								</div>
+							</section>
 								
-						<?php
-						endif;
-
-					endwhile;
-						wp_reset_postdata(); // Reset the post data to avoid database conflicts
-						?>
-
-						</div>
+			
+							<?php endif; ?> 
+					<?php endwhile; ?>
+					
 				</section>
-			<?php endif;
+			
+			<?php wp_reset_postdata(); endif;
 
 			// output the bio
 			$args = array(
 				'post_type' 		=> 'nf-bio',
-				'posts_per_page' 	=> -1,
+				'posts_per_page' 	=> 1,
 				'order_by'			=> 'title',
 				'order'				=> 'ASC'
 			);
