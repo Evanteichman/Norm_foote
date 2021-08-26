@@ -1,6 +1,11 @@
 <?php
 /**
- * The template for displaying archive pages
+ * The template for displaying all pages
+ *
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages
+ * and that other 'pages' on your WordPress site may use a
+ * different template.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -10,21 +15,15 @@
 get_header();
 ?>
 
-
 	<main id="primary" class="site-main">
 
-		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<?php
-				//the_archive_title( '<h1 class="page-title">', '</h1>' );
-				//the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-				<h1> <?php the_title();	?> </h1>
-			</header><!-- .page-header -->
-
+		<?php
+		while ( have_posts() ) :
+			the_post();
+			the_content();?>
+			<h1> <?php the_title();	?> </h1>
+			
 			<?php
-
 				// output the concerts
 				$args = array(
 					'post_type' 		=> 'nf-concert',
@@ -74,13 +73,17 @@ get_header();
 
 					the_posts_navigation();
 
-				else :
+				
 
-			get_template_part( 'template-parts/content', 'none' );
+		
 
-		endif; ?>
+			
+
+		endwhile; // End of the loop.
+		?>
 
 	</main><!-- #main -->
 
 <?php
+// get_sidebar();
 get_footer();
