@@ -251,6 +251,15 @@ function nf_block_editor_templates() {
 		);
 		$post_type_object->template_lock = 'all';
 	}
+	//Concert Schedule page (only allowing image as this is an archive, used page for easy)
+	if ( isset( $_GET['post'] ) && '255' == $_GET['post'] ) {
+		$post_type_object = get_post_type_object( 'page' );
+		$post_type_object->template = array(
+			// define blocks here...
+			array( 'core/image' ),
+		);
+		$post_type_object->template_lock = 'all';
+	}
 }
 add_action( 'init', 'nf_block_editor_templates' );
 
