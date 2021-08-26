@@ -22,7 +22,7 @@ get_header();
 					
 					<article>		
 					<?php if ( has_post_thumbnail() ) :
-						the_post_thumbnail('single-foote-note-image');	
+						the_post_thumbnail();	
 					endif; ?>
 							
 					<?php if ( get_field( 'foote_note_text' ) ) : ?>
