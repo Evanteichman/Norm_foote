@@ -409,6 +409,34 @@ add_action( 'init', 'nf_register_custom_post_types' );
 //CUSTOM TAXONOMIES
 function nf_register_taxonomies() {
 
+    // Add Contact Taxonomy
+    $labels = array(
+        'name'              => _x( 'Contact Categories', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Contact Category', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Contact Categories' ),
+        'all_items'         => __( 'All Contact Categories' ),
+        'parent_item'       => __( 'Parent Contact Category' ),
+        'parent_item_colon' => __( 'Parent Contact Category:' ),
+        'edit_item'         => __( 'Edit Contact Category' ),
+        'view_item'         => __( 'View Contacts Category' ),
+        'update_item'       => __( 'Update Contact Category' ),
+        'add_new_item'      => __( 'Add New Contact Category' ),
+        'new_item_name'     => __( 'New Contact Category Name' ),
+        'menu_name'         => __( 'Contact Category' ),
+    );
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_in_menu'      => true,
+        'show_in_nav_menu'  => true,
+        'show_in_rest'      => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'contact-categories' ),
+    );
+    register_taxonomy( 'nf-contact-category', array( 'nf-contacts' ), $args );
+
     // Add Foote Note Taxonomy
     $labels = array(
         'name'              => _x( 'Foote Note Categories', 'taxonomy general name' ),

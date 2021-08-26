@@ -99,7 +99,7 @@
   display: block;
 }
 
-@media screen and (min-width: 47.75em) {
+@media screen and (min-width: 55.625em) {
   .main-navigation {
     bottom: initial;
     right: initial;
@@ -120,6 +120,10 @@
       }
     }
 
+    li.current-menu-item > a {
+      text-decoration: underline;
+    }
+
     a::before {
       content: "";
       position: absolute;
@@ -136,6 +140,13 @@
         left: 0;
         right: auto;
         width: 100%;
+      }
+
+      //Getting rid of the hover on the logo in the navigation
+      .logo a:hover::before {
+        left: 0;
+        right: auto;
+        width: 0%;
       }
     }
   }
