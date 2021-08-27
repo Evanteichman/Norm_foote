@@ -18,14 +18,7 @@ get_header();
 			</header><!-- .page-header -->
 
 			<div class="page-content">
-				<p class="page-not-found">Unfornuately this page cannot be found! Please find the page you're looking for in the menu either located at the top or bottom of your screen.</p>
-				
-
-					
-
-					
-
-					
+				<p class="page-not-found">Unfornuately this page cannot be found! Please find the page you're looking for in the menu either located at the top or bottom of your screen.</p>		
 
 			</div><!-- .page-content -->
 		</section><!-- .error-404 -->

@@ -55,8 +55,6 @@ get_header(); ?>
 												<h3> <?php the_title(); ?></h3>
 												<p class="slide-text"><?php the_excerpt(); ?></p>
 
-												<!-- <a class="read-more" href="<?php //the_permalink(); ?>">Read More</a>	 -->
-
 												<?php 
 												$link = get_field('foote_note_link');
 												if( $link ): ?>
@@ -64,8 +62,6 @@ get_header(); ?>
 												<?php endif; ?>
 
 											</div>
-
-											
 										</div>
 
 									<?php endif; ?> 
@@ -82,8 +78,6 @@ get_header(); ?>
 			<h1 class="welcome">Welcome</h1>
 			<?php
 			
-
-			
 			$args = array(
 				'post_type' 		=> 'nf-social-text',
 				'posts_per_page' 	=> 1,
@@ -94,21 +88,19 @@ get_header(); ?>
 			
 			$query = new WP_Query( $args );
 			
-			
 			if ($query->have_posts()) : ?>
 				<section class="social-section-container">
-				
 
 					<?php 
 
 					while ($query->have_posts()) : 
 								$query->the_post();
 							if( function_exists('get_field')):?>
+
 							<h3><?php the_title(); ?></h3>
 							<section class="social-section">
 							
 								<div class="social-text-container">
-									
 
 									<?php if ( get_field( 'social_text' ) ) : ?>
 										<?php the_field('social_text');?>
@@ -120,11 +112,9 @@ get_header(); ?>
 									<?php
 									//social menu
 									require get_template_directory() . '/template-parts/content-social-nav.php';?>
-
 								</div>
 							</section>
 								
-			
 							<?php endif; ?> 
 					<?php endwhile; ?>
 					
