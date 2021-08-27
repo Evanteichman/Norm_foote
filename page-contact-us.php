@@ -23,21 +23,28 @@ get_header();
 
 			<h1>Get in Touch!</h1>
 
-			<section class="people-links">
+			<section class="people-links live-contact-links">
 			<?php
 			// output the contact info
 				$args = array(
 					'post_type' 		=> 'nf-contact',
 					'posts_per_page' 	=> -1,
 					'order_by'			=> 'title',
-					'order'				=> 'ASC'
+					'order'				=> 'ASC',
+					'tax_query' 		=> array(
+						array(
+							'taxonomy' => 'nf-contact-category',
+							'field'    => 'slug',
+							'terms'    => 'live-and-online-contact'
+						)
+					)
 				);
 				
 				$query = new WP_Query( $args );
 				
 				if ( $query -> have_posts() ):
 					?>
-						
+						<h2>Live and Online Bookings</h2>
 						<?php
 							while ( $query -> have_posts() ) :
 								$query -> the_post();
@@ -61,11 +68,62 @@ get_header();
 			
 							endwhile;
 						wp_reset_postdata(); // Reset the post data to avoid database conflicts
-				endif; 
+				endif; ?>
+				</section>
 
+				
+			<section class="people-links voice-over-links">
+			<?php
+			// output the contact info
+				$args = array(
+					'post_type' 		=> 'nf-contact',
+					'posts_per_page' 	=> -1,
+					'order_by'			=> 'title',
+					'order'				=> 'ASC',
+					'tax_query' 		=> array(
+						array(
+							'taxonomy' => 'nf-contact-category',
+							'field'    => 'slug',
+							'terms'    => 'voice-over-contact'
+						)
+					)
+				);
+				
+				$query = new WP_Query( $args );
+				
+				if ( $query -> have_posts() ):
+					?>
+						<h2>Voice Over Bookings</h2>
+						<?php
+							while ( $query -> have_posts() ) :
+								$query -> the_post();
+
+								if( function_exists('get_field')):?>
+									<div class="person">
+										<?php if ( get_field( 'contact_name' ) ) : ?>
+											<h3><?php the_field('contact_name');?></h3>
+										<?php endif; ?> 
+
+										<?php if ( get_field( 'contact_email' ) ) : ?>
+											<a href = "mailto:<?php the_field('contact_email');?>"><?php the_field('contact_email');?></a>
+										<?php endif; ?> 
+
+										<?php if ( get_field( 'contact_phone_number' ) ) : ?>
+											<p><?php the_field('contact_phone_number');?></p>
+										<?php endif; ?> 
+
+									</div>	
+								<?php endif;
+			
+							endwhile;
+						wp_reset_postdata(); // Reset the post data to avoid database conflicts
+				endif; ?>
+				</section>
+
+			<?php
 			endwhile; // End of the loop.
 			?>
-			</section>
+			
 
 	</main><!-- #main -->
 
