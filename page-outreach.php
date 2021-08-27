@@ -22,7 +22,9 @@ get_header();
 			the_post();
 		?>
 
-			<h1> <?php the_title();	?> </h1>	
+			<h1> <?php the_title();	?> </h1>
+			
+			<div class="outreach-content">
 
 			<section class="intro">
                 <?php if ( function_exists ( 'get_field' ) ) : ?>
@@ -133,6 +135,7 @@ get_header();
 						
 				<?php endif; ?>
             </section>
+			</div>
 
 			<?php endwhile; ?>
 
