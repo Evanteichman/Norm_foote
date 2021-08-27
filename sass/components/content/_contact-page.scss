@@ -1,33 +1,36 @@
 .page-id-211 {
+  .people-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 10rem;
+  }
 
+  .voice-over-links {
+    padding-top: 2rem;
+  }
+
+  @media screen and (min-width: 50em) {
     .people-links {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        min-height: 25rem;
+      // flex-direction: row;
+      // flex-wrap: wrap;
+    }
+  }
+
+  .person {
+    text-align: center;
+    // margin: 3rem 1rem 1rem;
+
+    h3 {
+      color: $nf-blue;
     }
 
-    @media screen and (min-width: 50em) {
-        .people-links {
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
+    a {
+      color: $nf-light;
+
+      &:hover {
+        color: $nf-accent;
+      }
     }
-
-    .person {
-        text-align: center;
-        margin: 3rem 1rem 1rem;
-
-        h3 {
-            color: $nf-blue;
-        }
-
-        a {
-            color: $nf-light;
-
-            &:hover {
-              color: $nf-accent;  
-            }
-        }
-    }
+  }
 }

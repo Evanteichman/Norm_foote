@@ -14,7 +14,7 @@
     margin: 0 auto;
     max-width: $maxWidth;
   }
-  
+
   .testimonial {
     width: 20em;
   }
@@ -117,7 +117,7 @@ figure.wp-block-image.size-full.is-resized {
   }
 }
 
-@media (min-width: 50em) {
+@media (min-width: 55.625em) {
   figure.wp-block-image.size-full.is-resized {
     img {
       padding-top: 5em;
@@ -153,7 +153,6 @@ figure.wp-block-image.size-full.is-resized {
         padding: 0.3rem;
 
         a {
-
           svg {
             fill: $nf-blue;
             width: 40px;
@@ -179,11 +178,8 @@ figure.wp-block-image.size-full.is-resized {
       margin: 0 auto;
 
       ul {
-
         li {
-
           a {
-
             svg {
               width: 60px;
               height: 60px;
