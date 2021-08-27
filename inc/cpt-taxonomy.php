@@ -435,7 +435,7 @@ function nf_register_taxonomies() {
         'query_var'         => true,
         'rewrite'           => array( 'slug' => 'contact-categories' ),
     );
-    register_taxonomy( 'nf-contact-category', array( 'nf-contacts' ), $args );
+    register_taxonomy( 'nf-contact-category', array( 'nf-contact' ), $args );
 
     // Add Foote Note Taxonomy
     $labels = array(
