@@ -260,6 +260,24 @@ function nf_block_editor_templates() {
 		);
 		$post_type_object->template_lock = 'all';
 	}
+	//Home Page
+	if ( isset( $_GET['post'] ) && '30' == $_GET['post'] ) {
+		$post_type_object = get_post_type_object( 'page' );
+		$post_type_object->template = array(
+			// define blocks here...
+			array( 'core/image' ),
+		);
+		$post_type_object->template_lock = 'all';
+	}
+	//Contact Page
+	if ( isset( $_GET['post'] ) && '211' == $_GET['post'] ) {
+		$post_type_object = get_post_type_object( 'page' );
+		$post_type_object->template = array(
+			// define blocks here...
+			array( 'core/title' ),
+		);
+		$post_type_object->template_lock = 'all';
+	}
 }
 add_action( 'init', 'nf_block_editor_templates' );
 
