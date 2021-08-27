@@ -74,6 +74,26 @@
     padding: 0.5rem 1rem 0.5rem 1.25rem;
     margin-right: 2rem;
   }
+
+  //Dot styling
+  .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: 1px;
+  }
+
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+  }
+
+  .swiper-pagination-bullet {
+      background: white;
+      opacity: 0.5;
+  }
+
+  .swiper-pagination-bullet-active {
+      background: $nf-accent;
+      opacity: 1;
+  } 
 }
 
 @media screen and (min-width: 700px) {

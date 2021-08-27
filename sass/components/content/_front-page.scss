@@ -69,7 +69,7 @@
   img {
     border-radius: 50%;
     padding: 1rem;
-    max-width: 22rem;
+    width: min(100%, 22rem);
   }
 
   p.quote {
