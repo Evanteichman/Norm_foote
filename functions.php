@@ -156,10 +156,6 @@ function nf_theme_scripts() {
 		wp_enqueue_script( 'photo-gallery', get_template_directory_uri() . '/js/photo-gallery.js', array(), '1.0.0', true );
 	}
 
-	if (is_front_page()) {
-		wp_enqueue_script( 'fadeIn', get_template_directory_uri() . '/js/fadeIn.js', array(), '1.0.0', true );
-	}
-
 	// Enqueue Swiper on the Homepage
 	if (is_front_page()) {
 		wp_enqueue_style(
@@ -284,24 +280,7 @@ add_action( 'init', 'nf_block_editor_templates' );
 // removing "Archive:" from archive pages
 add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
 
-// // excerpt length
-// function nf_custom_excerpt_length($length) {
-//     global $post;
-//     if ($post->post_type == 'post')
-//     return 25;
-//     else if ($post->post_type == 'nf-testimonial')
-//     return 40;
-//     else if ($post->post_type == 'nf-foote-note')
-//     return 50;
-//     else if ($post->post_type == 'nf-hero-slider')
-//     return 60;
-//     else
-//     return 80;
-// }
-// add_filter('excerpt_length', 'nf_custom_excerpt_length');
 
-
-//do we need an if statement wrapping the line inside the function?
 //trims text from ACF field in hero slide to create an excerpt, must call the_excerpt where you want to output this
 function acf_excerpt_hero($excerpt) {
 
@@ -327,5 +306,3 @@ function acf_read_more_foote_note($more){
 }
 
 add_filter('excerpt_more', 'acf_read_more_foote_note');
-
-

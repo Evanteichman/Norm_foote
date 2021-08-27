@@ -73,17 +73,10 @@ get_header();
 
 					the_posts_navigation();
 
-				
-
-		
-
-			
-
 		endwhile; // End of the loop.
 		?>
 
 	</main><!-- #main -->
 
 <?php
-// get_sidebar();
 get_footer();
