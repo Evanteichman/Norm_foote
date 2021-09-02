@@ -492,6 +492,35 @@ function nf_register_taxonomies() {
         'rewrite'           => array( 'slug' => 'testimonial-categories' ),
     );
     register_taxonomy( 'nf-testimonial-category', array( 'nf-testimonial' ), $args );
+
+
+    // Add Youtube Taxonomy
+    $labels = array(
+        'name'              => _x( 'YouTube Categories', 'taxonomy general name' ),
+        'singular_name'     => _x( 'YouTube Category', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search YouTube Categories' ),
+        'all_items'         => __( 'All YouTube Category' ),
+        'parent_item'       => __( 'Parent YouTube Category' ),
+        'parent_item_colon' => __( 'Parent YouTube Category:' ),
+        'edit_item'         => __( 'Edit YouTube Category' ),
+        'view_item'         => __( 'View YouTube Category' ),
+        'update_item'       => __( 'Update YouTube Category' ),
+        'add_new_item'      => __( 'Add New YouTube Category' ),
+        'new_item_name'     => __( 'New YouTube Category Name' ),
+        'menu_name'         => __( 'YouTube Category' ),
+    );
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_in_menu'      => true,
+        'show_in_nav_menu'  => true,
+        'show_in_rest'      => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'youtube-categories' ),
+    );
+    register_taxonomy( 'nf-youtube-category', array( 'nf-youtube-video' ), $args );
 }
 add_action( 'init', 'nf_register_taxonomies');
 

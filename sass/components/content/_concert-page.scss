@@ -1,5 +1,7 @@
 .page-id-255 {
-  
+  h1 {
+    padding-top: 1rem;
+  }
   .wp-block-image {
     display: flex;
     justify-content: center;
@@ -37,7 +39,6 @@
 
   @media (min-width: 46.875em) {
     .concert-row {
-      
       .concert-info {
         flex-direction: row;
         justify-content: space-between;
@@ -56,5 +57,14 @@
         }
       }
     }
+  }
+}
+
+@media (min-width: 55.625em) {
+  .page-id-255 {
+    padding-top: 6rem;
+    // h1 {
+    //   padding-top: 1rem;
+    // }
   }
 }

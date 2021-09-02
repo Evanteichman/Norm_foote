@@ -7,6 +7,7 @@
 
   a.read-more {
     @include button;
+    z-index: 10000;
   }
 
   .swiper-wrapper {
@@ -76,7 +77,9 @@
   }
 
   //Dot styling
-  .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+  .swiper-pagination-fraction,
+  .swiper-pagination-custom,
+  .swiper-container-horizontal > .swiper-pagination-bullets {
     bottom: 1px;
   }
 
@@ -86,14 +89,14 @@
   }
 
   .swiper-pagination-bullet {
-      background: white;
-      opacity: 0.5;
+    background: white;
+    opacity: 0.5;
   }
 
   .swiper-pagination-bullet-active {
-      background: $nf-accent;
-      opacity: 1;
-  } 
+    background: $nf-accent;
+    opacity: 1;
+  }
 }
 
 @media screen and (min-width: 700px) {

@@ -46,8 +46,14 @@ get_header();
 						<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2> 
 								
 						<?php if ( get_field( 'foote_note_text' ) ) : ?>
-							<p><?php the_excerpt();?></p>	
-							<a class="read-more" href="<?php the_permalink(); ?>">Read More</a>
+							<p><?php the_excerpt();?></p>
+							<?php
+								
+							$link = get_field('foote_note_link');
+							if( $link ): ?>
+								<a class="read-more" href="<?php echo esc_url( $link ); ?>">Read More</a>
+							<?php endif;?>
+		
 						<?php endif; ?>
 					<div>
 							

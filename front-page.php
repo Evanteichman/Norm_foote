@@ -218,12 +218,19 @@ get_header(); ?>
 			<?php	
 			endif;
 
-			// output the youtube videos
+			// output the youtube videos disney
 			$args = array(
 				'post_type' 		=> 'nf-youtube-video',
 				'posts_per_page' 	=> -1,
 				'order_by'			=> 'title',
-				'order'				=> 'ASC'
+				'order'				=> 'ASC',
+				'tax_query' 		=> array(
+					array(
+						'taxonomy' => 'nf-youtube-category',
+						'field'    => 'slug',
+						'terms'    => 'disney'
+					)
+				)
 			);
 			 
 			$query = new WP_Query( $args );
@@ -231,9 +238,9 @@ get_header(); ?>
 			if ( $query -> have_posts() ):
 				?>	
 
-					<h2 class="disney-title">Disney Records</h2>
+					<h2 class="disney-title">Classic Foote Videos / Disney Records</h2>
 
-					<div class="youtube-container">
+				<div class="youtube-container">
 
 					<?php
 				while ( $query -> have_posts() ) :
@@ -247,7 +254,55 @@ get_header(); ?>
 								<?php the_field('video');?>
 							<?php endif; ?> 
 						</div>
+				</div>
+						
+					<?php endif;
+		
+				endwhile;
+					wp_reset_postdata(); // Reset the post data to avoid database conflicts
+					?>
 					</div>
+			<?php		
+			endif;
+
+
+			// output the youtube videos non disney
+			$args = array(
+				'post_type' 		=> 'nf-youtube-video',
+				'posts_per_page' 	=> -1,
+				'order_by'			=> 'title',
+				'order'				=> 'ASC',
+				'tax_query' 		=> array(
+					array(
+						'taxonomy' => 'nf-youtube-category',
+						'field'    => 'slug',
+						'terms'    => 'other'
+					)
+				)
+			);
+			 
+			$query = new WP_Query( $args );
+			 
+			if ( $query -> have_posts() ):
+				?>	
+
+					<h2 class="disney-title">Check Out Other YouTube Videos and Clips</h2>
+
+				<div class="youtube-container">
+
+					<?php
+				while ( $query -> have_posts() ) :
+					$query -> the_post();
+
+					if( function_exists('get_field')):?>
+
+					<div class="video-container">
+						<div class="youtube-video">
+							<?php if ( get_field( 'video' ) ) : ?>
+								<?php the_field('video');?>
+							<?php endif; ?> 
+						</div>
+				</div>
 						
 					<?php endif;
 		
