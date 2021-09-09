@@ -13,10 +13,10 @@
 
   .concert-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: 90%;
-    max-width: $maxWidth;
+    // width: 90%;
+    max-width: 40rem;
     margin: 0 auto;
     padding: 1rem;
     border-bottom: 1.5px solid rgba(178, 188, 199, 0.5);
@@ -29,8 +29,16 @@
 
   .concert-info {
     display: flex;
-    flex-direction: column;
-    width: 10rem;
+    // flex-direction: column;
+    width: 20rem;
+
+    .concert-date {
+      padding-right: 1rem;
+      max-width: 6rem;
+    }
+    .concert-time {
+      padding-right: 1rem;
+    }
 
     p {
       margin-bottom: 0;

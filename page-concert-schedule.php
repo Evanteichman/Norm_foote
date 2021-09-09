@@ -56,12 +56,15 @@ get_header();
 										<p class="concert-location"><?php the_field('concert_location');?></p>
 									<?php endif; ?> 
 								</section>
+
+								
+								<!-- code below is for the link button, I left it in incase in the future uncle norm wants this feature -->
 								
 								<?php 
-								$link = get_field('concert_link');
-								if( $link ): ?>
-									<a class="button" href="<?php echo esc_url( $link ); ?>">Buy Ticket</a>
-								<?php endif; ?>
+								// $link = get_field('concert_link');
+								// if( $link ): ?>
+									<!-- <a class="button" href="<?php // echo esc_url( $link ); ?>">Buy Ticket</a> -->
+								<?php //endif; ?>
 								
 							</div>
 							<?php endif; ?>
