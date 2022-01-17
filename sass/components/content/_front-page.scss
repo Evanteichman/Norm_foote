@@ -1,203 +1,209 @@
 //Hero Image
-figure.wp-block-image.size-full.is-resized {
-  img {
-    width: 100%;
-    height: 85vh;
-    object-fit: cover;
-  }
-}
-
-@media (min-width: 55.625em) {
-  figure.wp-block-image.size-full.is-resized {
-    img {
-      padding-top: 5em;
+.page-id-55 {
+  figure.wp-block-image {
+    .size-full.is-resized {
+      img {
+        width: 100%;
+        height: 85vh;
+        object-fit: cover;
+      }
     }
   }
-}
 
-//Welcome
-.welcome {
-  position: absolute;
-  top: 15%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 4rem;
-}
-
-// Social Section
-.social-section-container {
-  padding: 1rem;
-
-  h3 {
-    text-align: center;
-  }
-
-  .social-text-container {
-    text-align: center;
-    padding-bottom: 0.5rem;
-  }
-
-  .music-links-container {
-    padding-top: 1rem;
-    display: flex;
-    justify-content: center;
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-
-      li {
-        padding: 0.3rem;
-
-        a {
-          svg {
-            fill: $nf-blue;
-            width: 40px;
-            height: 40px;
-
-            &:hover {
-              fill: $nf-accent;
-            }
-          }
+  @media (min-width: 55.625em) {
+    figure.wp-block-image {
+      .size-full.is-resized {
+        img {
+          padding-top: 5em;
         }
       }
     }
   }
-}
 
-@media (min-width: 45em) {
-  .social-section {
-    margin: 0 auto;
-    max-width: 37em;
+  //Welcome
+  .welcome {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 4rem;
+  }
+
+  // Social Section
+  .social-section-container {
+    padding: 1rem;
+
+    h3 {
+      text-align: center;
+    }
+
+    .social-text-container {
+      text-align: center;
+      padding-bottom: 0.5rem;
+    }
 
     .music-links-container {
-      max-width: 50%;
-      margin: 0 auto;
+      padding-top: 1rem;
+      display: flex;
+      justify-content: center;
 
       ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+
         li {
+          padding: 0.3rem;
+
           a {
             svg {
-              width: 60px;
-              height: 60px;
+              fill: $nf-blue;
+              width: 40px;
+              height: 40px;
+
+              &:hover {
+                fill: $nf-accent;
+              }
             }
           }
         }
       }
     }
   }
-}
 
-//Bio Section
-.bio-container {
-  padding: 1rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  max-width: $maxWidth;
-  margin: 0 auto;
-  justify-items: center;
+  @media (min-width: 45em) {
+    .social-section {
+      margin: 0 auto;
+      max-width: 37em;
 
-  img {
-    border-radius: 50%;
-    padding: 1rem;
-    width: min(100%, 22rem);
+      .music-links-container {
+        max-width: 50%;
+        margin: 0 auto;
+
+        ul {
+          li {
+            a {
+              svg {
+                width: 60px;
+                height: 60px;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
-  p.quote {
-    font-size: 1.25rem;
-    color: $nf-blue;
-    text-align: center;
-    margin-bottom: 0.1rem;
-    max-width: 40rem;
-  }
-}
-
-@media (min-width: 50em) {
+  //Bio Section
   .bio-container {
+    padding: 1rem;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 3fr 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "img text"
-      "quote quote";
-    width: 100%;
-    height: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    max-width: $maxWidth;
+    margin: 0 auto;
+    justify-items: center;
 
-    .img {
-      grid-area: img;
+    img {
+      border-radius: 50%;
+      padding: 1rem;
+      width: min(100%, 22rem);
     }
 
-    .text {
-      grid-area: text;
-    }
-
-    .quote {
-      grid-area: quote;
+    p.quote {
+      font-size: 1.25rem;
+      color: $nf-blue;
+      text-align: center;
+      margin-bottom: 0.1rem;
+      max-width: 40rem;
     }
   }
-}
 
-//Testimonial Section
-.testimonial-container {
-  margin: 0 2rem;
-}
+  @media (min-width: 50em) {
+    .bio-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 3fr 1fr;
+      gap: 0px 0px;
+      grid-auto-flow: row;
+      grid-template-areas:
+        "img text"
+        "quote quote";
+      width: 100%;
+      height: 100%;
 
-.testimonial {
-  margin: 0 auto;
-  padding: 1rem;
-}
+      .img {
+        grid-area: img;
+      }
 
-@media (min-width: 50em) {
+      .text {
+        grid-area: text;
+      }
+
+      .quote {
+        grid-area: quote;
+      }
+    }
+  }
+
+  //Testimonial Section
   .testimonial-container {
-    display: flex;
-    margin: 0 auto;
-    max-width: $maxWidth;
+    margin: 0 2rem;
   }
 
   .testimonial {
-    width: 20em;
-  }
-}
-
-//YouTube Video Section
-.video-container {
-  margin: 0 auto;
-  padding: 1rem;
-  max-width: 40rem;
-}
-
-.youtube-video {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
-
-  iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-  }
-}
-
-@media (min-width: 50em) {
-  .youtube-container {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: $maxWidth;
     margin: 0 auto;
+    padding: 1rem;
   }
 
+  @media (min-width: 50em) {
+    .testimonial-container {
+      display: flex;
+      margin: 0 auto;
+      max-width: $maxWidth;
+    }
+
+    .testimonial {
+      width: 20em;
+    }
+  }
+
+  //YouTube Video Section
   .video-container {
-    width: 30em;
+    margin: 0 auto;
+    padding: 1rem;
+    max-width: 40rem;
+  }
+
+  .youtube-video {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @media (min-width: 50em) {
+    .youtube-container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: $maxWidth;
+      margin: 0 auto;
+    }
+
+    .video-container {
+      width: 30em;
+    }
   }
 }

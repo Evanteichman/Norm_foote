@@ -1,80 +1,80 @@
-.page-id-28 {
-    
+.page-id-61 {
+  // .page-id-28 {
+  //page id local host 28
+
+  .hero-img {
+    margin-bottom: 1rem;
+    height: 12rem;
+    object-fit: cover;
+    object-position: left;
+  }
+
+  .symphony-content {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .the-symphony-content {
+    max-width: 30rem;
+  }
+
+  .photo-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    max-width: 20rem;
+    margin: 0 auto;
+    grid-gap: 10px;
+  }
+
+  @media screen and (min-width: 40.75em) {
+    main {
+      max-width: $maxWidth;
+      margin: 0 auto;
+    }
+  }
+
+  @media screen and (min-width: 37.5em) {
     .hero-img {
-        margin-bottom: 1rem;
-        height: 12rem;
-        object-fit: cover;
-        object-position: left;
-    }
-
-    .symphony-content {
-        display: flex;
-        flex-direction: column;
-        padding: 1rem;
-    }
-
-    .the-symphony-content {
-        max-width: 30rem;
+      height: 15em;
     }
 
     .photo-gallery {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
-        max-width: 20rem;
-        margin: 0 auto;
-        grid-gap: 10px;
-    }
-    
-    @media screen and (min-width: 40.75em) {
-        main {
-            max-width: $maxWidth;
-            margin: 0 auto;
-        }
+      grid-template-columns: 1fr 1fr 1fr;
+      justify-items: right;
+      max-width: initial;
     }
 
-    @media screen and (min-width: 37.5em) {
+    .the-symphony-content {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      max-width: 55em;
 
-        .hero-img {
-            height: 15em;
-        }
+      p {
+        padding: 0 2em 1em;
+      }
+    }
+  }
 
-        .photo-gallery {
-            grid-template-columns: 1fr 1fr 1fr;
-            justify-items: right;
-            max-width: initial;
-        }
-
-        .the-symphony-content {
-            display: flex;
-            flex-direction: column;
-            margin: 0 auto;
-            max-width: 55em;
-
-            p {
-                padding: 0 2em 1em;
-            }
-        }
+  @media screen and (min-width: 50em) {
+    .hero-img {
+      margin-bottom: 3em;
     }
 
-    @media screen and (min-width: 50em) {
-
-        .hero-img {
-            margin-bottom: 3em;
-        }
-
-        .photo-gallery {
-            grid-template-columns: 1fr 1fr;
-        }
-
-        .the-symphony-content {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-
-            p {
-                max-width: 60%;
-            }
-        }
+    .photo-gallery {
+      grid-template-columns: 1fr 1fr;
     }
+
+    .the-symphony-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      p {
+        max-width: 60%;
+      }
+    }
+  }
 }

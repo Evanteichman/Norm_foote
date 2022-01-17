@@ -1,8 +1,10 @@
-.page-id-255 {
+.page-id-51 {
+  // .page-id-255 {
+  //local version page id 255
   h1 {
     padding-top: 1rem;
   }
-  .wp-block-image {
+  figure.wp-block-image {
     display: flex;
     justify-content: center;
     img {
@@ -69,7 +71,7 @@
 }
 
 @media (min-width: 55.625em) {
-  .page-id-255 {
+  .page-id-51 {
     padding-top: 6rem;
     // h1 {
     //   padding-top: 1rem;

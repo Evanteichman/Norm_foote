@@ -217,9 +217,15 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 require get_template_directory() . '/inc/cpt-taxonomy.php';
 
 //Adding a block template for certain pages
+// due to migrate db pro not working I am manually adding everything to the backend of the live site. Becasue of this I have to change the ID values in the code below becasue the pages on the live site are not the same as our dev site. 
+
+
 function nf_block_editor_templates() {
 	//Photos page
-    if ( isset( $_GET['post'] ) && '24' == $_GET['post'] ) {
+	//dev site ID 24
+    if ( isset( $_GET['post'] ) && '59' == $_GET['post'] ) {
+    // if ( isset( $_GET['post'] ) && '24' == $_GET['post'] ) {
+
         $post_type_object = get_post_type_object( 'page' );
         $post_type_object->template = array(
             // define blocks here...
@@ -229,7 +235,10 @@ function nf_block_editor_templates() {
     }
 
 	//Outreach page (only allowing title as we will use all ACF for content)
-    if ( isset( $_GET['post'] ) && '26' == $_GET['post'] ) {
+	//dev site ID 26
+    if ( isset( $_GET['post'] ) && '57' == $_GET['post'] ) {
+    // if ( isset( $_GET['post'] ) && '26' == $_GET['post'] ) {
+
         $post_type_object = get_post_type_object( 'page' );
         $post_type_object->template = array(
             // define blocks here...
@@ -239,7 +248,10 @@ function nf_block_editor_templates() {
     }
 
 	//Symphony page (only allowing title as we will use all ACF for content)
-	if ( isset( $_GET['post'] ) && '28' == $_GET['post'] ) {
+	//dev site ID 28
+	if ( isset( $_GET['post'] ) && '61' == $_GET['post'] ) {
+	// if ( isset( $_GET['post'] ) && '28' == $_GET['post'] ) {
+
 		$post_type_object = get_post_type_object( 'page' );
 		$post_type_object->template = array(
 			// define blocks here...
@@ -248,7 +260,10 @@ function nf_block_editor_templates() {
 		$post_type_object->template_lock = 'all';
 	}
 	//Concert Schedule page (only allowing image as this is an archive, used page for easy)
-	if ( isset( $_GET['post'] ) && '255' == $_GET['post'] ) {
+	//dev site ID 255
+	if ( isset( $_GET['post'] ) && '51' == $_GET['post'] ) {
+	// if ( isset( $_GET['post'] ) && '255' == $_GET['post'] ) {
+
 		$post_type_object = get_post_type_object( 'page' );
 		$post_type_object->template = array(
 			// define blocks here...
@@ -257,7 +272,10 @@ function nf_block_editor_templates() {
 		$post_type_object->template_lock = 'all';
 	}
 	//Home Page
-	if ( isset( $_GET['post'] ) && '30' == $_GET['post'] ) {
+	//dev site ID 30
+	if ( isset( $_GET['post'] ) && '55' == $_GET['post'] ) {
+	// if ( isset( $_GET['post'] ) && '30' == $_GET['post'] ) {
+
 		$post_type_object = get_post_type_object( 'page' );
 		$post_type_object->template = array(
 			// define blocks here...
@@ -266,7 +284,10 @@ function nf_block_editor_templates() {
 		$post_type_object->template_lock = 'all';
 	}
 	//Contact Page
-	if ( isset( $_GET['post'] ) && '211' == $_GET['post'] ) {
+	//dev site ID 211
+	if ( isset( $_GET['post'] ) && '53' == $_GET['post'] ) {
+	// if ( isset( $_GET['post'] ) && '211' == $_GET['post'] ) {
+		
 		$post_type_object = get_post_type_object( 'page' );
 		$post_type_object->template = array(
 			// define blocks here...

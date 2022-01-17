@@ -38,7 +38,7 @@ get_header(); ?>
 			
 			
 			if ($query->have_posts()) : ?>
-				<section class="home-slider">
+				<!-- <section class="home-slider">
 					
 					<div class="swiper-container">
 						<div class="swiper-wrapper">
@@ -72,7 +72,7 @@ get_header(); ?>
 					
 					<div class="swiper-button swiper-button-prev"></div>
 					<div class="swiper-button swiper-button-next"></div>
-				</section>
+				</section> -->
 			
 			<?php wp_reset_postdata(); endif;?>
 			<h1 class="welcome">Welcome</h1>
